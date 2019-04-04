@@ -1,20 +1,34 @@
- <!DOCTYPE html>
-  <html>
+<!DOCTYPE html>
+<html>
     <head>
-
-	  	<link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-
-
     </head>
-    <body>
-	  Cambia colore pagina:
-      <button id="changeColor" style="height:30px;width:30px"></button>
-	  
-	  <button id="searchBtn">Cerca su Immobiliare</button>
 
-      <script src="js/jquery-3.3.1.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-	  <script src="popup.js"></script>    
+    <body>
+        <!--TITOLO-->
+        <div id="titleDiv" style="text-align: center">
+            <span id="title">Homeless</span>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-2">
+                    <span id="searchBtnImmobiliare" class="searchBtn">
+                        <img src="images/immobiliare.png" class="icon">
+                        Cerca su Immobiliare
+                    </span>
+                </div>
+                <div class="col-sm-2">
+                    <span id="searchBtnIdealista" class="searchBtn">
+                        <img src="images/idealista.png" class="icon">
+                        Cerca su idealista
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="popup.js"></script>
     </body>
-  </html>
+</html>

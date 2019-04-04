@@ -1,0 +1,31 @@
+body {
+    height: 400px;
+    width: 300px;
+    font-family: "Roboto", sans-serif !important;
+    transition: 500ms;
+}
+
+/*Theme*/
+.light{
+    background-color: #FAFAFA !important;
+    color: #212121 !important;
+}
+.dark{
+    background-color: #212121 !important;
+    color: #FAFAFA !important;
+}
+
+#titleDiv{
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.icon{
+    height: 20px;
+    padding-bottom: 2px;
+}
+
+.searchClass{
+    cursor: pointer;
+}

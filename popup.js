@@ -1,21 +1,18 @@
-	let changeColor = document.getElementById('changeColor');
-	let searchBtn = document.getElementById('searchBtn');
+//TODO sistemare ovviamente
+let searchBtnIdealista = document.getElementById('searchBtnIdealista');
+let searchBtnImmobiliare = document.getElementById('searchBtnImmobiliare');
+let title = document.getElementById('title');
 
-	chrome.storage.sync.get('color', function(data) {
-		changeColor.style.backgroundColor = data.color;
-		changeColor.setAttribute('value', data.color);
-	});
-  
-	changeColor.onclick = function(element) {
-		let color = element.target.value;
-		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-		  chrome.tabs.executeScript(
-			  tabs[0].id,
-			  {code: 'document.body.style.backgroundColor = "' + color + '";'});
-		});
-	};
-  
-  	searchBtn.onclick = function(element) {
-		var newURL = "https://www.immobiliare.it/";
-		chrome.tabs.create({ url: newURL });
-	};
+searchBtnIdealista.onclick = function(element) {
+	var newURL = "https://www.idealista.it/";
+	chrome.tabs.create({ url: newURL });
+};
+searchBtnImmobiliare.onclick = function(element) {
+	var newURL = "https://www.immobiliare.it/";
+	chrome.tabs.create({ url: newURL });
+};
+
+title.onclick = function(element){
+	$(document.body).toggleClass('light');
+	$(document.body).toggleClass('dark');
+};

@@ -1,0 +1,14 @@
+{
+    "name": "Homeless",
+    "version": "1.0",
+    "manifest_version": 1,
+
+    "description": "",
+    "icons": {},
+
+    "browser_action": {
+        "default_title": "",
+        "default_icon": {},
+        "default_popup": "html/main.html"
+    }
+}

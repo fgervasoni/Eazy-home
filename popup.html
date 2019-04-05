@@ -20,7 +20,8 @@
                 <label for="city">Città</label>
                 <input id="city" type="text" class="form-control" placeholder="Città">
             </div>
-
+        </div>
+        <div class="row">
             <div class="col-xs-6 center">
                 <label for="contract">Contratto</label>
                 <select id="contract" class="form-control">
@@ -33,30 +34,41 @@
                     <option>Default select</option>
                 </select>
             </div>
-
-            <div class="col-xs-6 center">
+        </div>
+        <div class="row">
+            <div class="col-xs-12 center">
                 <label for="maxPrice">Prezzo Massimo</label>
                 <input id="maxPrice" type="text" class="form-control" placeholder="Euro (€)">
             </div>
-            <div class="col-xs-6 center">
+        </div>
+        <div class="row">
+            <div class="col-xs-12 center">
                 <label for="minSurface">Superficie Minima</label>
                 <input id="minSurface" type="text" class="form-control" placeholder="Metri quadri (m²)">
             </div>
         </div>
+
+        <div class="row" style="text-align: center">
+            <div class="col-xs-12 center">
+                <button id="search" type="button" class="btn btn-primary" style="margin:5px">Cerca</button>
+            </div>
+        </div>
+
+
         <div class="row">
-            <div class="col-xs-12">
-                <div class="col-xs-6">
-                    <span id="searchBtnImmobiliare" class="searchBtn">
-                        <img src="images/immobiliare.png" class="icon">
-                        Cerca su Immobiliare
-                    </span>
-                </div>
-                <div class="col-xs-6">
-                    <span id="searchBtnIdealista" class="searchBtn">
-                        <img src="images/idealista.png" class="icon">
-                        Cerca su idealista
-                    </span>
-                </div>
+            <div class="col-xs-12 center">
+                <span class="searchBtn">
+                    <input type="checkbox" />
+                    <img src="images/immobiliare.png" class="icon">
+                </span>
+                <span class="searchBtn">
+                    <input type="checkbox" />
+                    <img src="images/idealista.png" class="icon">
+                </span>
+                <span class="searchBtn">
+                    <input type="checkbox" />
+                    <img src="images/casa.png" class="icon">
+                </span>
             </div>
         </div>
     </div>

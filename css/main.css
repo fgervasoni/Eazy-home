@@ -1,5 +1,8 @@
+html{
+    font-size: 14px !important;
+}
+
 body {
-    height: 400px;
     width: 300px;
     font-family: "Roboto", sans-serif !important;
     transition: 500ms;
@@ -35,7 +38,7 @@ body {
 }
 
 .center{
-    margin: auto;
+    margin: auto !important;
 }
 
 label{

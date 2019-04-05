@@ -1,16 +1,22 @@
-//TODO sistemare ovviamente
-let searchBtnIdealista = document.getElementById('searchBtnIdealista');
-let searchBtnImmobiliare = document.getElementById('searchBtnImmobiliare');
+let dataJSON = {};
+$.getJSON('config.json', function(data) {
+	dataJSON = data;
+});
+
+// chrome.tabs.create({ url: baseUrl });
+
 let titleDiv = document.getElementById('titleDiv');
 
-searchBtnIdealista.onclick = function(element) {
-	var newURL = "https://www.idealista.it/";
-	chrome.tabs.create({ url: newURL });
+let search = document.getElementById('search');
+
+search.onclick = function(element) {
+	let city = document.getElementById('city');
+	let contract = document.getElementById('contract');
+	let tipology = document.getElementById('tipology');
+	let maxPrice = document.getElementById('maxPrice');
+	let minSurface = document.getElementById('minSurface');
 };
-searchBtnImmobiliare.onclick = function(element) {
-	var newURL = "https://www.immobiliare.it/";
-	chrome.tabs.create({ url: newURL });
-};
+
 
 titleDiv.onclick = function(element){
 	$(document.body).toggleClass('light');

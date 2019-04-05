@@ -65,7 +65,28 @@
 				"maxArea": "mqMin={{maxArea}}",
 				"separator": "&"
 			}
-		}
+		},
+		"mioaffitto": {
+			"name": "Mio Affitto",
+			"icon": "images/mioaffitto.png",
+			"base_url": "www.mioaffitto.it",
+			"required_filters": "search/?query_string={{city}}&",
+			"typeRentSell" : {
+				"rent": "affitto"
+			},		
+			"typeHouse" : {
+				"all": "TODO",
+				"house": "TODO",
+				"flat": "TODO"
+			},
+			"optional_filters": {
+				"minPrice": "precio_min={{minPrice}}",
+				"maxPrice": "precio_max={{maxPrice}}",
+				"minArea": "TODO",
+				"maxArea": "TODO",
+				"separator": "&"
+			}
+		},
 	}
 }
 			

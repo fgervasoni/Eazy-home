@@ -54,7 +54,7 @@
 				"sell": "vendita"
 			},		
 			"typeHouse" : {
-				"all": "residenziale,
+				"all": "residenziale",
 				"house": "case-indipendenti",
 				"flat": "appartamenti"
 			},

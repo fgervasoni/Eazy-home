@@ -1,7 +1,7 @@
 //TODO sistemare ovviamente
 let searchBtnIdealista = document.getElementById('searchBtnIdealista');
 let searchBtnImmobiliare = document.getElementById('searchBtnImmobiliare');
-let title = document.getElementById('title');
+let titleDiv = document.getElementById('titleDiv');
 
 searchBtnIdealista.onclick = function(element) {
 	var newURL = "https://www.idealista.it/";
@@ -12,7 +12,10 @@ searchBtnImmobiliare.onclick = function(element) {
 	chrome.tabs.create({ url: newURL });
 };
 
-title.onclick = function(element){
+titleDiv.onclick = function(element){
 	$(document.body).toggleClass('light');
 	$(document.body).toggleClass('dark');
+
+	$(this).toggleClass('light');
+	$(this).toggleClass('dark');
 };

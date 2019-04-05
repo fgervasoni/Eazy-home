@@ -18,8 +18,11 @@ body {
 
 #titleDiv{
     text-align: center;
-    padding: 5px;
+    padding: 10px;
     cursor: pointer;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    margin: -10px -25px 0 -25px;
 }
 
 .icon{

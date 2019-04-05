@@ -15,47 +15,43 @@
         </div>
 
         <!--FILTRI-->
-        <div class="row">
-            <div class="col-xs-12 center">
-                <label for="city">Città</label>
-                <input id="city" type="text" class="form-control" placeholder="Città">
+        <div class="filters">
+            <div class="row">
+                <div class="col-xs-12 center">
+                    <label for="city">Città</label>
+                    <input id="city" type="text" class="form-control" placeholder="Città">
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-6 center">
-                <label for="contract">Contratto</label>
-                <select id="contract" class="form-control">
-                    <option>Default select</option>
-                </select>
+            <div class="row">
+                <div class="col-xs-6 center">
+                    <label for="contract">Contratto</label>
+                    <select id="contract" class="form-control">
+                        <option>Default select</option>
+                    </select>
+                </div>
+                <div class="col-xs-6 center">
+                    <label for="tipology">Tipologia</label>
+                    <select id="tipology" class="form-control">
+                        <option>Default select</option>
+                    </select>
+                </div>
             </div>
-            <div class="col-xs-6 center">
-                <label for="tipology">Tipologia</label>
-                <select id="tipology" class="form-control">
-                    <option>Default select</option>
-                </select>
+            <div class="row">
+                <div class="col-xs-12 center">
+                    <label for="maxPrice">Prezzo Massimo</label>
+                    <input id="maxPrice" type="text" class="form-control" placeholder="Euro (€)">
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 center">
-                <label for="maxPrice">Prezzo Massimo</label>
-                <input id="maxPrice" type="text" class="form-control" placeholder="Euro (€)">
-            </div>
-        </div>
-        <div class="row">
+            <div class="row">
             <div class="col-xs-12 center">
                 <label for="minSurface">Superficie Minima</label>
                 <input id="minSurface" type="text" class="form-control" placeholder="Metri quadri (m²)">
             </div>
         </div>
-
-        <div class="row" style="text-align: center">
-            <div class="col-xs-12 center">
-                <button id="search" type="button" class="btn btn-primary" style="margin:5px">Cerca</button>
-            </div>
         </div>
 
-
-        <div class="row">
+        <!--ICONE-->
+        <div class="row" style="padding-top: 5px;">
             <div class="col-xs-12 center">
                 <span class="searchBtn">
                     <input type="checkbox" />
@@ -71,6 +67,14 @@
                 </span>
             </div>
         </div>
+
+        <!--CERCA-->
+        <div class="row" style="text-align: center">
+            <div class="col-xs-12 center">
+                <button id="search" type="button" class="btn btn-primary">Cerca</button>
+            </div>
+        </div>
+
     </div>
         <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>

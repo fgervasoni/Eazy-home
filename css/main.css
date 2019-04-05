@@ -45,3 +45,8 @@ label{
     margin-bottom: 0 !important;
     margin-top: 0.5rem;
 }
+
+#search{
+    margin: 10px;
+    padding: 5px 100px;
+}

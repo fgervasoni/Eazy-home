@@ -1,0 +1,46 @@
+{
+	"it": {
+		"immobiliare": {
+			name: "Immobiliare",
+			icon: "images/immobiliare.png",
+			base_url: "https://www.immobiliare.it",
+			required_filters: "/{{typeRentSell}}-{{typeHouse}}/{{city}}/?criterio=rilevanza&",
+			typeRentSell : {
+				"rent": "affitto",
+				"sell": "vendita"
+			},		
+			typeHouse : {
+				"house": "case-indipendenti",
+				"flat": "appartamenti",
+				"room": "appartamenti"
+			},
+			optional_filters: {
+				"maxPrice": "prezzoMassimo={{maxPrice}}"
+				"minArea": "superficieMinima={{minArea}}",
+				"separator": "&"
+			}
+		},
+		"idealista": {
+			name: "Idealista",
+			icon: "images/idealista.png",
+			base_url: "https://www.idealista.it",
+			required_filters: "{{typeRentSell}}-{{typeHouse}}/{{city}}-{{city}}",
+			typeRentSell : {
+				"rent": "affitto",
+				"sell": "vendita"
+			},		
+			typeHouse : {
+				"house": "case",
+				"flat": "case",
+				"room": "stanze"
+			},
+			optional_filters: {
+				"minPrice": "con-prezzo-min_{{minPrice}}"
+				"maxArea": "dimensione-max_{{maxArea}}",
+				"separator": ","
+			}
+		}
+	}
+}
+			
+			

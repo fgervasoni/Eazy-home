@@ -3,6 +3,7 @@ body {
     width: 300px;
     font-family: "Roboto", sans-serif !important;
     transition: 500ms;
+    padding: 10px;
 }
 
 /*Theme*/
@@ -28,4 +29,13 @@ body {
 
 .searchClass{
     cursor: pointer;
+}
+
+.center{
+    margin: auto;
+}
+
+label{
+    margin-bottom: 0 !important;
+    margin-top: 0.5rem;
 }

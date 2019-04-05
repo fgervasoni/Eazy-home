@@ -6,20 +6,50 @@
     </head>
 
     <body>
+    <div class="container">
         <!--TITOLO-->
         <div id="titleDiv" style="text-align: center">
             <span id="title">Homeless</span>
         </div>
 
+        <!--FILTRI-->
         <div class="row">
-            <div class="col-sm-12">
-                <div class="col-sm-2">
+            <div class="col-xs-12 center">
+                <label for="city">Città</label>
+                <input id="city" type="text" class="form-control" placeholder="Città">
+            </div>
+
+            <div class="col-xs-6 center">
+                <label for="contract">Contratto</label>
+                <select id="contract" class="form-control">
+                    <option>Default select</option>
+                </select>
+            </div>
+            <div class="col-xs-6 center">
+                <label for="tipology">Tipologia</label>
+                <select id="tipology" class="form-control">
+                    <option>Default select</option>
+                </select>
+            </div>
+
+            <div class="col-xs-6 center">
+                <label for="maxPrice">Prezzo Massimo</label>
+                <input id="maxPrice" type="text" class="form-control" placeholder="Euro (€)">
+            </div>
+            <div class="col-xs-6 center">
+                <label for="minSurface">Superficie Minima</label>
+                <input id="minSurface" type="text" class="form-control" placeholder="Metri quadri (m²)">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="col-xs-6">
                     <span id="searchBtnImmobiliare" class="searchBtn">
                         <img src="images/immobiliare.png" class="icon">
                         Cerca su Immobiliare
                     </span>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-xs-6">
                     <span id="searchBtnIdealista" class="searchBtn">
                         <img src="images/idealista.png" class="icon">
                         Cerca su idealista
@@ -27,6 +57,7 @@
                 </div>
             </div>
         </div>
+    </div>
         <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="popup.js"></script>

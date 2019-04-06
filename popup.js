@@ -12,7 +12,7 @@ let search = document.getElementById('search');
 search.onclick = function(element) {
 	let city = document.getElementById('city');
 	let contract = document.getElementById('contract');
-	let tipology = document.getElementById('tipology');
+	let typology = document.getElementById('typology');
 	let maxPrice = document.getElementById('maxPrice');
 	let minSurface = document.getElementById('minSurface');
 };
@@ -25,3 +25,7 @@ titleDiv.onclick = function(element){
 	$(this).toggleClass('light');
 	$(this).toggleClass('dark');
 };
+
+$(function () {
+	$('[data-toggle="tooltip"]').tooltip()
+})

@@ -5,26 +5,30 @@ $.getJSON('config.json', function(data) {
 
 // chrome.tabs.create({ url: baseUrl });
 
-let titleDiv = document.getElementById('titleDiv');
+let titleDiv = $("#titleDiv");
 
-let search = document.getElementById('search');
+let search =  $("#search");
 
-search.onclick = function(element) {
-	let city = document.getElementById('city');
-	let contract = document.getElementById('contract');
-	let typology = document.getElementById('typology');
-	let maxPrice = document.getElementById('maxPrice');
-	let minSurface = document.getElementById('minSurface');
-};
+search.click(function(element) {
+	console.log("search click")
+	let city = $('#city');
+	let contract = $('#contract');
+	let typology = $('#typology');
+	let minPrice = $('#minPrice');
+	let maxPrice = $('#maxPrice');
+	let minArea = $('#minArea');
+	let maxArea = $('#maxArea');
+});
 
 
-titleDiv.onclick = function(element){
+titleDiv.click(function(element){
 	$(document.body).toggleClass('light');
 	$(document.body).toggleClass('dark');
 
 	$(this).toggleClass('light');
 	$(this).toggleClass('dark');
-};
+});
+
 
 $(function () {
 	$('[data-toggle="tooltip"]').tooltip()

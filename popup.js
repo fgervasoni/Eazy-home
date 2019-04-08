@@ -67,10 +67,14 @@ $(function () {
 				urls.push(siteConfig.base_url);
 			});
 
-			//Open Tabs
-			_.forEach(urls, function(url){
-				chrome.tabs.create({ url: url })
-			});
+			if(city[0].value !== "") {
+                //Open Tabs
+                _.forEach(urls, function (url) {
+                    chrome.tabs.create({url: url})
+                });
+            }else{
+			    alert("Campo obbligatorio mancante")
+            }
 		});
 
 	});

@@ -28,7 +28,7 @@ $(function () {
 		//Draw site list
 		_.forOwn(config, function(value, key){
 			siteList.append('<span class="searchBtn">' +
-                    '<input type="checkbox" value="'+key+' "/>' +
+                    '<input type="checkbox" value="'+key+'"/>' +
                    ' <img data-toggle="tooltip" data-placement="top" title="' + key +'" src="'+ value.icon +'" class="icon">' +
                '</span>');
 		});
@@ -44,7 +44,7 @@ $(function () {
 			let minArea = $('#minArea');
 			let maxArea = $('#maxArea');
 			
-			var checkedValues = $('input:checkbox:checked').map(function() {
+			var checkedValues = $('#site-list input:checkbox:checked').map(function() {
 				return this.value;
 			}).get();
 			

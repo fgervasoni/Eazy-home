@@ -54,3 +54,8 @@ label{
 select{
     width: 169px !important;
 }
+
+#city{
+    width: 250px;
+    border-radius: 25px;
+}

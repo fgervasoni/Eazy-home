@@ -50,3 +50,7 @@ label{
     margin: 10px;
     padding: 5px 100px;
 }
+
+select{
+    width: 169px !important;
+}

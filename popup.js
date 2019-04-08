@@ -1,7 +1,5 @@
-let dataJSON = {};
-$.getJSON('config.json', function(data) {
-	dataJSON = data;
-});
+let config = {};
+
 
 // chrome.tabs.create({ url: baseUrl });
 
@@ -10,7 +8,7 @@ let titleDiv = $("#titleDiv");
 let search =  $("#search");
 
 search.click(function(element) {
-	console.log("search click")
+	
 	let city = $('#city');
 	let contract = $('#contract');
 	let typology = $('#typology');
@@ -18,6 +16,8 @@ search.click(function(element) {
 	let maxPrice = $('#maxPrice');
 	let minArea = $('#minArea');
 	let maxArea = $('#maxArea');
+	
+	
 });
 
 
@@ -30,6 +30,21 @@ titleDiv.click(function(element){
 });
 
 
+//INIT FUNCTION
 $(function () {
-	$('[data-toggle="tooltip"]').tooltip()
+	$('[data-toggle="tooltip"]').tooltip();
+	
+	$.getJSON('config.json', function(data) {
+		config = data;
+		
+		//TODO: select state flag
+		let state = "it";
+
+		_.forOwn(config[state], function(value, key){
+			$("#site-list").append('<span class="searchBtn">' +
+                    '<input type="checkbox" />' +
+                   ' <img data-toggle="tooltip" data-placement="top" title="' + key +'" src="'+ value.icon +'" class="icon">' +
+               '</span>');
+		});
+	});
 })

@@ -11,7 +11,7 @@ $(function () {
 	
 	$.getJSON('config.json', function(data) {
 		globalConfig = data;
-		
+
 		//TODO: spostare click su tema, in un pulsante a destra e salvare nello storage la preferenza
 		titleDiv.click(function(element){
 			$(document.body).toggleClass('light');
@@ -20,6 +20,18 @@ $(function () {
 			$(this).toggleClass('light');
 			$(this).toggleClass('dark');
 		});
+
+        $("#contract").change(function() {
+//	TODO: abilitare checkbox in base alla presenza o meno nel config.json delle condizioni imposte dalla select
+// 	es: select --> vendita --> disabilitare checkbox mioaffitto
+            console.log($(this).val())
+        });
+
+        $("#typology").change(function() {
+//	TODO: abilitare checkbox in base alla presenza o meno nel config.json delle condizioni imposte dalla select
+// 	es: select --> vendita --> disabilitare checkbox mioaffitto
+            console.log($(this).val())
+        });
 		
 		//TODO: select state flag e salvare nello storage la preferenza
 		let state = "it";
@@ -28,12 +40,12 @@ $(function () {
 		//Draw site list
 		_.forOwn(config, function(value, key){
 			siteList.append('<span class="searchBtn">' +
-                    '<input type="checkbox" value="'+key+'"/>' +
+                    '<input type="checkbox" checked value="'+key+'"/>' +
                    ' <img data-toggle="tooltip" data-placement="top" title="' + key +'" src="'+ value.icon +'" class="icon">' +
                '</span>');
 		});
-		
-		
+
+
 		//Bind click ricerca
 		search.click(function(element) {
 			let city = $('#city');
@@ -43,18 +55,18 @@ $(function () {
 			let maxPrice = $('#maxPrice');
 			let minArea = $('#minArea');
 			let maxArea = $('#maxArea');
-			
+
 			var checkedValues = $('#site-list input:checkbox:checked').map(function() {
 				return this.value;
 			}).get();
-			
+
 			let urls = [];
 			_.forEach(checkedValues, function(value){
 				let siteConfig = config[value];
 				//TODO: creare url dal config
 				urls.push(siteConfig.base_url);
 			});
-			
+
 			//Open Tabs
 			_.forEach(urls, function(url){
 				chrome.tabs.create({ url: url })

@@ -3,7 +3,7 @@ html{
 }
 
 body {
-    width: 300px;
+    width: 400px;
     font-family: "Roboto", sans-serif !important;
     transition: 500ms;
     padding: 10px;
@@ -30,7 +30,7 @@ body {
 
 .icon{
     height: 20px;
-    padding-bottom: 2px;
+    padding: 0 10px 2px 0;
 }
 
 .searchClass{

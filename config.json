@@ -47,7 +47,7 @@
 		"casa": {
 			"name": "Casa.it",
 			"icon": "images/casa.png",
-			"base_url": "www.casa.it",
+			"base_url": "https://www.casa.it",
 			"required_filters": "{{typeRentSell}}/{{typeHouse}}/{{city}}?",
 			"typeRentSell" : {
 				"rent": "affitto",
@@ -69,7 +69,7 @@
 		"mioaffitto": {
 			"name": "Mio Affitto",
 			"icon": "images/mioaffitto.png",
-			"base_url": "www.mioaffitto.it",
+			"base_url": "https://www.mioaffitto.it",
 			"required_filters": "search/?query_string={{city}}&",
 			"typeRentSell" : {
 				"rent": "affitto"

@@ -92,3 +92,12 @@ select{
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
+
+.country{
+    width: 50px;
+    margin: 10px;
+    transition: 500ms;
+}
+.country:hover{
+    opacity: 0.3;
+}

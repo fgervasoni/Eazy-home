@@ -3,7 +3,19 @@ let config = {};
 let titleDiv = $("#titleDiv");
 let search =  $("#search");
 let siteList =  $("#site-list");
+let menu =  $("#menu");
+let closeMenu =  $("#closeMenu");
+let theme = $(".theme");
+let sideNav = $("#sideNav");
 
+
+menu.click(function(element) {
+	sideNav[0].style.width = "250px";
+})
+
+closeMenu.click(function(element) {
+	sideNav[0].style.width = "0";
+})
 
 //INIT FUNCTION
 $(function () {
@@ -13,12 +25,25 @@ $(function () {
 		globalConfig = data;
 
 		//TODO: spostare click su tema, in un pulsante a destra e salvare nello storage la preferenza
-		titleDiv.click(function(element){
+		theme.click(function(element){
+
+			var isHidden = $("#themeLight")[0].hidden;
+			if(!isHidden){
+				$("#themeBlack")[0].hidden = false;
+				$("#themeLight")[0].hidden = true;
+			}else{
+				$("#themeBlack")[0].hidden = true;
+				$("#themeLight")[0].hidden = false;
+			}
+
 			$(document.body).toggleClass('light');
 			$(document.body).toggleClass('dark');
 
-			$(this).toggleClass('light');
-			$(this).toggleClass('dark');
+			$(titleDiv).toggleClass('light');
+			$(titleDiv).toggleClass('dark');
+
+			$(sideNav).toggleClass('light');
+			$(sideNav).toggleClass('dark');
 		});
 
         $("#contract").change(function() {
@@ -73,7 +98,7 @@ $(function () {
                     chrome.tabs.create({url: url})
                 });
             }else{
-			    alert("Campo obbligatorio mancante")
+				city[0].style.border = "1px solid red"
             }
 		});
 

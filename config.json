@@ -37,8 +37,8 @@
 				"room": "stanze"
 			},
 			"optional_filters": {
-				"minPrice": "con-prezzo-min_{{minPrice}}",
-				"maxPrice": "con-prezzo-max_{{maxPrice}}",
+				"minPrice": "con-prezzo_{{minPrice}}",
+				"maxPrice": "con-prezzo_{{maxPrice}}",
 				"minArea": "dimensione-min_{{minArea}}",
 				"maxArea": "dimensione-max_{{maxArea}}",
 				"separator": ","

@@ -113,7 +113,7 @@ $(function () {
 				let url = siteConfig.base_url + siteConfig.required_filters.replaceAll("{{typeRentSell}}", siteConfig.typeRentSell[contract]).replaceAll("{{typeHouse}}", siteConfig.typeHouse[typology]).replaceAll("{{city}}", city); 
 				_.forOwn(filters, function(value, key){
 					if(!_.isEmpty(value)){
-						url += siteConfig.optional_filters[key].replace("{{"+key+"}}", value);
+						url += siteConfig.optional_filters[key].replace("{{"+key+"}}", value) + '&';
 					}
 				});
 				urls.push(url);

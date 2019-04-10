@@ -124,7 +124,7 @@ $(function () {
                     chrome.tabs.create({url: url})
                 });
             }else{
-				$('#city').style.border = "1px solid red"
+				// $('#city').style.border = "1px solid red"
             }
 		});
 
@@ -137,6 +137,13 @@ $(function () {
 		});
 		let country = $(".country");
 		country.click(function(element){
+
+			//TODO: passare codice lingua per traduzioni
+			$.getJSON('languages.json', function(data) {
+				languagesConfig = data;
+				let translator = $('body').translate({lang: "it", t: languagesConfig.dictionary});
+			});
+
 			//TODO: salvare il codice del country nello storage prima di andare alla pagina successiva
 			$("#containerCountry")[0].hidden = true;
 			$("#containerSearch")[0].hidden = false;

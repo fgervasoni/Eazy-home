@@ -1,0 +1,60 @@
+{
+    "dictionary": {
+        "city": {
+            "it": "Città",
+            "uk": "City",
+            "de": "",
+            "fr": "",
+            "es": "",
+            "pt": ""
+        },
+        "contract": {
+            "it": "Contratto",
+            "uk": "Contract",
+            "de": "",
+            "fr": "",
+            "es": "",
+            "pt": ""
+        },
+        "typology": {
+            "it": "Tipologia",
+            "uk": "Typology",
+            "de": "",
+            "fr": "",
+            "es": "",
+            "pt": ""
+        },
+        "minPrice": {
+            "it": "Prezzo minimo",
+            "uk": "Min price",
+            "de": "",
+            "fr": "",
+            "es": "",
+            "pt": ""
+        },
+        "maxPrice": {
+            "it": "Prezzo massimo",
+            "uk": "Max price",
+            "de": "",
+            "fr": "",
+            "es": "",
+            "pt": ""
+        },
+        "minArea": {
+            "it": "Area minima",
+            "uk": "Min area",
+            "de": "",
+            "fr": "",
+            "es": "",
+            "pt": ""
+        },
+        "maxArea": {
+            "it": "Area massima",
+            "uk": "Max area",
+            "de": "",
+            "fr": "",
+            "es": "",
+            "pt": ""
+        }
+    }
+}

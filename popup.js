@@ -39,6 +39,16 @@ closeMenu.click(function(element) {
 	sideNav[0].style.width = "0";
 });
 
+var redrawSiteList = function(config, selectedFields){
+	var disabled = false;
+	_.forOwn(config, function(value, key){
+		siteList.append('<span class="searchBtn">' +
+			'<input type="checkbox" checked value="'+key+'" ' + (disabled ? 'disabled' : '' )+ '/>' +
+		   ' <img data-toggle="tooltip" data-placement="top" title="' + key +'" src="'+ value.icon +'" class="icon">' +
+	    '</span>');
+	});
+}
+
 //INIT FUNCTION
 $(function () {
 	$('[data-toggle="tooltip"]').tooltip();
@@ -85,14 +95,8 @@ $(function () {
 		config = globalConfig[state];
 
 		//Draw site list
-		_.forOwn(config, function(value, key){
-			siteList.append('<span class="searchBtn">' +
-                    '<input type="checkbox" checked value="'+key+'"/>' +
-                   ' <img data-toggle="tooltip" data-placement="top" title="' + key +'" src="'+ value.icon +'" class="icon">' +
-               '</span>');
-		});
-
-
+		redrawSiteList(config);
+		
 		//Bind click ricerca
 		search.click(function(element) {
 			let city = $('#city').val().toLowerCase();
@@ -121,13 +125,13 @@ $(function () {
 				urls.push(url);
 			});
 
-			if(city[0].value !== "") {
+			if(!_.isEmpty(city)) {
                 //Open Tabs
                 _.forEach(urls, function (url) {
                     chrome.tabs.create({url: url})
                 });
             }else{
-				city[0].style.border = "1px solid red"
+				$('#city').style.border = "1px solid red"
             }
 		});
 

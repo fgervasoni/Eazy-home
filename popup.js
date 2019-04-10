@@ -10,6 +10,13 @@ let sideNav = $("#sideNav");
 let country = $(".country");
 let lang = $("#lang");
 
+
+//TODO: spostare in un file di utils.js
+String.prototype.replaceAll = function (find, replace) {
+    var str = this;
+    return str.replace(new RegExp(find.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'g'), replace);
+};
+
 lang.click(function(element){
 	$("#containerCountry")[0].hidden = false;
 	$("#containerSearch")[0].hidden = true;
@@ -86,13 +93,15 @@ $(function () {
 
 		//Bind click ricerca
 		search.click(function(element) {
-			let city = $('#city');
-			let contract = $('#contract');
-			let typology = $('#typology');
-			let minPrice = $('#minPrice');
-			let maxPrice = $('#maxPrice');
-			let minArea = $('#minArea');
-			let maxArea = $('#maxArea');
+			let city = $('#city').val().toLowerCase();
+			let contract = $('#contract').val();
+			let typology = $('#typology').val();
+			let filters = {
+				minPrice : $('#minPrice').val(),
+				maxPrice : $('#maxPrice').val(),
+				minArea : $('#minArea').val(),
+				maxArea : $('#maxArea').val()
+			}
 
 			var checkedValues = $('#site-list input:checkbox:checked').map(function() {
 				return this.value;
@@ -101,8 +110,13 @@ $(function () {
 			let urls = [];
 			_.forEach(checkedValues, function(value){
 				let siteConfig = config[value];
-				//TODO: creare url dal config
-				urls.push(siteConfig.base_url);
+				let url = siteConfig.base_url + siteConfig.required_filters.replaceAll("{{typeRentSell}}", siteConfig.typeRentSell[contract]).replaceAll("{{typeHouse}}", siteConfig.typeHouse[typology]).replaceAll("{{city}}", city); 
+				_.forOwn(filters, function(value, key){
+					if(!_.isEmpty(value)){
+						url += siteConfig.optional_filters[key].replace("{{"+key+"}}", value);
+					}
+				});
+				urls.push(url);
 			});
 
 			if(city[0].value !== "") {

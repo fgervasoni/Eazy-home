@@ -26,7 +26,7 @@
 			"name": "Idealista",
 			"icon": "images/idealista.png",
 			"base_url": "https://www.idealista.it",
-			"required_filters": "{{typeRentSell}}-{{typeHouse}}/{{city}}-{{city}}",
+			"required_filters": "/{{typeRentSell}}-{{typeHouse}}/{{city}}-{{city}}/",
 			"typeRentSell" : {
 				"rent": "affitto",
 				"sell": "vendita"
@@ -48,7 +48,7 @@
 			"name": "Casa.it",
 			"icon": "images/casa.png",
 			"base_url": "https://www.casa.it",
-			"required_filters": "{{typeRentSell}}/{{typeHouse}}/{{city}}?",
+			"required_filters": "/{{typeRentSell}}/{{typeHouse}}/{{city}}?",
 			"typeRentSell" : {
 				"rent": "affitto",
 				"sell": "vendita"
@@ -70,7 +70,7 @@
 			"name": "Mio Affitto",
 			"icon": "images/mioaffitto.png",
 			"base_url": "https://www.mioaffitto.it",
-			"required_filters": "search/?query_string={{city}}&",
+			"required_filters": "/search/?query_string={{city}}&",
 			"typeRentSell" : {
 				"rent": "affitto"
 			},		

@@ -9,7 +9,6 @@ let menu =  $("#menu");
 let closeMenu =  $("#closeMenu");
 let theme = $(".theme");
 let sideNav = $("#sideNav");
-let country = $(".country");
 let lang = $("#lang");
 
 
@@ -24,12 +23,6 @@ lang.click(function(element){
 	$("#containerSearch")[0].hidden = true;
 });
 
-
-country.click(function(element){
-	$("#containerCountry")[0].hidden = true;
-	$("#containerSearch")[0].hidden = false;
-	sideNav[0].style.width = "0";
-});
 
 menu.click(function(element) {
 	sideNav[0].style.width = "250px";
@@ -56,7 +49,7 @@ $(function () {
 	$.getJSON('config.json', function(data) {
 		globalConfig = data;
 
-		//TODO: spostare click su tema, in un pulsante a destra e salvare nello storage la preferenza
+		//TODO: salvare nello storage la preferenza del tema
 		theme.click(function(element){
 
 			var isHidden = $("#themeLight")[0].hidden;
@@ -90,7 +83,7 @@ $(function () {
             console.log($(this).val())
         });
 		
-		//TODO: select state flag e salvare nello storage la preferenza
+		//TODO: recuperare la preferenza salvata nello storage settata al click
 		let state = "it";
 		config = globalConfig[state];
 
@@ -140,7 +133,14 @@ $(function () {
 	$.getJSON('country.json', function(data) {
 		countryConfig = data;
 		_.forOwn(countryConfig.countries, function(value){
-			countryList.append('<img id="'+value.code+'" class="country" src="'+value.image+'">');
+			countryList.append('<img id="'+value.code+'" class="country" src="'+value.image+'">');			
+		});
+		let country = $(".country");
+		country.click(function(element){
+			//TODO: salvare il codice del country nello storage prima di andare alla pagina successiva
+			$("#containerCountry")[0].hidden = true;
+			$("#containerSearch")[0].hidden = false;
+			sideNav[0].style.width = "0";
 		});
 	});
 });

@@ -94,10 +94,11 @@ select{
 }
 
 .country{
-    width: 50px;
-    margin: 10px;
+    width: 60px;
+    margin: 28px;
     transition: 500ms;
 }
 .country:hover{
     opacity: 0.3;
+    cursor: pointer;
 }

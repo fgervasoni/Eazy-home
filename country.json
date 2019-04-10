@@ -1,0 +1,34 @@
+{
+    "countries": {
+        "italy": {
+            "name" : "Italia",
+            "image": "images/italy.png",
+            "code": "it"
+        },
+        "unitedKingdom": {
+            "name" : "United Kingdom",
+            "image": "images/united-kingdom.png",
+            "code": "uk"
+        },
+        "germany": {
+            "name" : "Deutschland",
+            "image": "images/germany.png",
+            "code": "de"
+        },
+        "france": {
+            "name" : "France",
+            "image": "images/france.png",
+            "code": "fr"
+        },
+        "spain": {
+            "name" : "España",
+            "image": "images/spain.png",
+            "code": "es"
+        },
+        "portugal": {
+            "name" : "Portugal",
+            "image": "images/portugal.png",
+            "code": "pt"
+        }
+    }
+}

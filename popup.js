@@ -1,7 +1,9 @@
+let countryConfig = {};
 let globalConfig = {};
 let config = {};
 let titleDiv = $("#titleDiv");
 let search =  $("#search");
+let countryList = $("#country-list");
 let siteList =  $("#site-list");
 let menu =  $("#menu");
 let closeMenu =  $("#closeMenu");
@@ -101,7 +103,7 @@ $(function () {
 				maxPrice : $('#maxPrice').val(),
 				minArea : $('#minArea').val(),
 				maxArea : $('#maxArea').val()
-			}
+			};
 
 			var checkedValues = $('#site-list input:checkbox:checked').map(function() {
 				return this.value;
@@ -130,4 +132,11 @@ $(function () {
 		});
 
 	});
-})
+
+	$.getJSON('country.json', function(data) {
+		countryConfig = data;
+		_.forOwn(countryConfig.countries, function(value){
+			countryList.append('<img id="'+value.code+'" class="country" src="'+value.image+'">');
+		});
+	});
+});

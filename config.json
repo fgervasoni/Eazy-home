@@ -62,7 +62,7 @@
 				"minPrice": "priceMin={{minPrice}}",
 				"maxPrice": "priceMax={{maxPrice}}",
 				"minArea": "mqMin={{minArea}}",
-				"maxArea": "mqMin={{maxArea}}",
+				"maxArea": "mqMax={{maxArea}}",
 				"separator": "&"
 			}
 		},

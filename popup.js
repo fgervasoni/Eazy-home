@@ -25,6 +25,7 @@ closeMenu.click(function(element) {
 
 var redrawSiteList = function(config, selectedFields){
 	var disabled = false;
+	siteList.empty();
 	_.forOwn(config, function(value, key){
 		siteList.append('<span class="searchBtn">' +
 			'<input type="checkbox" checked value="'+key+'" ' + (disabled ? 'disabled' : '' )+ '/>' +
@@ -40,17 +41,25 @@ $(function () {
 	$.getJSON('config.json', function(data) {
 		globalConfig = data;
 		
-		
 		//TODO: se non è salvato un country aprire la pagina, altrimenti andare al form di ricerca
-		chrome.storage.sync.get('country', function(countryCode) {
-		  if (!countryCode) {
+		chrome.storage.sync.get('country', function(data) {
+		  if (!data.country) {
 			Country.showCountryPageSelection().then(function(countryCode){
 				Language.setLanguage(countryCode).then(function(){
 					initApp();
 				}); //la prima volta settiamo la lingua del country, poi potrà essere modificata da menù
 			})
 		  } else {
-			initApp();
+			  //TODO: non salvare dallo storage ma prendere dal browser
+				chrome.storage.sync.get('language', function(data) {
+					if(data.language){
+						Language.setLanguage(data.language).then(function(){
+							initApp();
+						});
+					} else {
+						initApp();
+					}
+				});
 		  }
 		});
 		
@@ -58,8 +67,8 @@ $(function () {
 });
 
 var initApp = function(){
-	chrome.storage.sync.get('country', function(state) {
-		config = globalConfig[state];
+	chrome.storage.sync.get('country', function(data) {
+		config = globalConfig[data.country];
 		
 		$("#containerFlags").hide();
 		$("#containerSearch").show();

@@ -25,7 +25,7 @@ var Country = {
 	setCountry: function(element){
 		var deferred = Q.defer();
 		try {
-			//TODO: salvare il codice del country nello storage prima di andare alla pagina successiva
+			chrome.storage.sync.set({country: element.target.id})
 			$("#containerFlags").hide();
 			$("#containerSearch").show();
 			sideNav[0].style.width = "0";
@@ -46,5 +46,7 @@ var Country = {
 
 
 Country.menuButton.click(function(element){
-	Country.showCountryPageSelection();
+	Country.showCountryPageSelection().then(function(countryCode){	
+		initApp();
+	});
 });

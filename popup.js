@@ -7,6 +7,7 @@ let menu =  $("#menu");
 let closeMenu =  $("#closeMenu");
 let theme = $(".theme");
 let sideNav = $("#sideNav");
+let browserLang = navigator.language ? navigator.language.split("-")[0] : ( navigator.userLanguage ? navigator.userLanguage.split("-")[0] : "en");
 
 
 //TODO: spostare in un file di utils.js
@@ -45,20 +46,13 @@ $(function () {
 		chrome.storage.sync.get('country', function(data) {
 		  if (!data.country) {
 			Country.showCountryPageSelection().then(function(countryCode){
-				Language.setLanguage(countryCode).then(function(){
+				Language.setLanguage(browserLang).then(function(){
 					initApp();
-				}); //la prima volta settiamo la lingua del country, poi potrà essere modificata da menù
+				});
 			})
 		  } else {
-			  //TODO: non salvare dallo storage ma prendere dal browser
-				chrome.storage.sync.get('language', function(data) {
-					if(data.language){
-						Language.setLanguage(data.language).then(function(){
-							initApp();
-						});
-					} else {
-						initApp();
-					}
+				Language.setLanguage(browserLang).then(function(){
+					initApp();
 				});
 		  }
 		});
@@ -69,6 +63,7 @@ $(function () {
 var initApp = function(){
 	chrome.storage.sync.get('country', function(data) {
 		config = globalConfig[data.country];
+		
 		
 		$("#containerFlags").hide();
 		$("#containerSearch").show();

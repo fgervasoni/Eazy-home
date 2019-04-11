@@ -138,10 +138,9 @@ $(function () {
 		let country = $(".country");
 		country.click(function(element){
 
-			//TODO: passare codice lingua per traduzioni
 			$.getJSON('languages.json', function(data) {
 				languagesConfig = data;
-				let translator = $('body').translate({lang: "it", t: languagesConfig.dictionary});
+				let translator = $('body').translate({lang: element.currentTarget.id, t: languagesConfig.dictionary});
 			});
 
 			//TODO: salvare il codice del country nello storage prima di andare alla pagina successiva

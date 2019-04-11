@@ -10,9 +10,9 @@
     <body>
 
     <!--PAESE-->
-    <div id="containerCountry" class="container" style="margin-bottom: 15px; height: 250px;">
-        <h5 style="text-align: center">Select a Country</h5>
-        <div id="country-list" class="center"></div>
+    <div id="containerFlags" class="container" style="margin-bottom: 15px; height: 250px;">
+        <h5 style="text-align: center">Select a Country</h5><!-- TODO: titolo dinamico lingua/country -->
+        <div id="flags-list" class="center"></div>
         <!--<div style="font-size: 10px; text-align: center">Icons made by-->
             <!--<a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a-->
                     <!--href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a-->
@@ -27,7 +27,8 @@
     <!--MENU-->
     <div id="sideNav" class="sidenav light">
         <a id="closeMenu" class="closebtn">&times;</a>
-        <a id="country" class="trn">country</a>
+		<a id="language-menu" class="trn">language</a>
+        <a id="country-menu" class="trn">country</a>
     </div>
 
         <!--TITOLO-->
@@ -102,6 +103,8 @@
         <script src="js/bootstrap.bundle.min.js"></script>
 		<script src="js/lodash.js"></script>
         <script src="js/jquery.translate.js"></script>
+        <script src="js/q.js"></script>
+		<script src="country.js"></script>
 		<script src="language.js"></script>
         <script src="popup.js"></script>
     </body>

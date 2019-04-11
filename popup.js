@@ -1,9 +1,8 @@
-let countryConfig = {};
 let globalConfig = {};
 let config = {};
 let titleDiv = $("#titleDiv");
 let search =  $("#search");
-let countryList = $("#country-list");
+let flagsList = $("#flags-list");
 let siteList =  $("#site-list");
 let menu =  $("#menu");
 let closeMenu =  $("#closeMenu");
@@ -42,21 +41,12 @@ $(function () {
 	$.getJSON('config.json', function(data) {
 		globalConfig = data;
 		
-		$.getJSON('country.json', function(data) {
-			countryConfig = data;
-			_.forOwn(countryConfig.countries, function(value){
-				countryList.append('<img id="'+value.code+'" class="country" src="'+value.image+'">');			
-			});
-			let country = $(".country");
-			country.click(function(element){
-
-				Language.setLanguage(element.currentTarget.id);
-				//TODO: salvare il codice del country nello storage prima di andare alla pagina successiva
-				$("#containerCountry").hide();
-				$("#containerSearch").show();
-				sideNav[0].style.width = "0";
-			});
+		
+		//TODO: se non è salvato un country aprire la pagina, altrimenti andare al form di ricerca
+		Country.showCountryPageSelection().then(function(countryCode){
+			Language.setLanguage(countryCode); //la prima volta settiamo la lingua del country, poi potrà essere modificata da menù
 		});
+		
 
 		//TODO: salvare nello storage la preferenza del tema
 		theme.click(function(element){

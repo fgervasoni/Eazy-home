@@ -3,13 +3,8 @@ var isHidden = $("#themeLight")[0].hidden;
 
 //TODO: salvare nello storage la preferenza del tema
 theme.click(function(element){
-    if(!isHidden){
-        $("#themeBlack").show();
-        $("#themeLight").hide();
-    }else{
-        $("#themeBlack").hide();
-        $("#themeLight").show();
-    }
+        $("#themeBlack").toggle();
+        $("#themeLight").toggle();
 
     $(document.body).toggleClass('light');
     $(document.body).toggleClass('dark');

@@ -7,7 +7,7 @@ var Country = {
 		$("#containerFlags").show();
 		try {
 			if(Country.flagsList.is(':empty')){
-				$.getJSON('flags.json', function(flags) {
+				$.getJSON('json-files/flags.json', function(flags) {
 					_.forOwn(flags, function(value){
 						Country.flagsList.append('<img id="'+value.code+'" class="flag" src="'+value.image+'">');			
 					});

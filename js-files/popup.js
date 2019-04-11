@@ -22,7 +22,7 @@ var redrawSiteList = function(config, selectedFields){
 $(function () {
 	$('[data-toggle="tooltip"]').tooltip();
 	
-	$.getJSON('config.json', function(data) {
+	$.getJSON('json-files/config.json', function(data) {
 		globalConfig = data;
 		
 		//TODO: se non è salvato un country aprire la pagina, altrimenti andare al form di ricerca

@@ -29,7 +29,7 @@ var Language = {
 	setLanguage : function(language){
 		var deferred = Q.defer();
 		try {
-			$.getJSON('languages.json', function(languagesConfig) {
+			$.getJSON('json-files/languages.json', function(languagesConfig) {
 				chrome.storage.sync.set({language: language})
 				var translator = $('body').translate({lang: language, t: languagesConfig.dictionary});
 				$("#containerFlags").hide();

@@ -1,4 +1,5 @@
 var Country = {
+    flagsList : $("#flags-list"),
 	menuButton: $("#country-menu"),
 	showCountryPageSelection: function(countries){
 		var deferred = Q.defer();
@@ -6,10 +7,10 @@ var Country = {
 		$("#containerSearch").hide();
 		$("#containerFlags").show();
 		try {
-			if(flagsList.is(':empty')){
+			if(Country.flagsList.is(':empty')){
 				$.getJSON('flags.json', function(flags) {
 					_.forOwn(flags, function(value){
-						flagsList.append('<img id="'+value.code+'" class="flag" src="'+value.image+'">');			
+						Country.flagsList.append('<img id="'+value.code+'" class="flag" src="'+value.image+'">');			
 					});
 					Country.addClickListener(deferred);
 				});

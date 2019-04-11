@@ -2,7 +2,6 @@ let globalConfig = {};
 let config = {};
 let titleDiv = $("#titleDiv");
 let search =  $("#search");
-let flagsList = $("#flags-list");
 let siteList =  $("#site-list");
 let menu =  $("#menu");
 let closeMenu =  $("#closeMenu");
@@ -43,14 +42,30 @@ $(function () {
 		
 		
 		//TODO: se non è salvato un country aprire la pagina, altrimenti andare al form di ricerca
-		Country.showCountryPageSelection().then(function(countryCode){
-			Language.setLanguage(countryCode); //la prima volta settiamo la lingua del country, poi potrà essere modificata da menù
+		chrome.storage.sync.get('country', function(countryCode) {
+		  if (!countryCode) {
+			Country.showCountryPageSelection().then(function(countryCode){
+				Language.setLanguage(countryCode).then(function(){
+					initApp();
+				}); //la prima volta settiamo la lingua del country, poi potrà essere modificata da menù
+			})
+		  } else {
+			initApp();
+		  }
 		});
 		
+	});
+});
 
+var initApp = function(){
+	chrome.storage.sync.get('country', function(state) {
+		config = globalConfig[state];
+		
+		$("#containerFlags").hide();
+		$("#containerSearch").show();
+		
 		//TODO: salvare nello storage la preferenza del tema
 		theme.click(function(element){
-
 			var isHidden = $("#themeLight")[0].hidden;
 			if(!isHidden){
 				$("#themeBlack").show();
@@ -69,22 +84,6 @@ $(function () {
 			$(sideNav).toggleClass('light');
 			$(sideNav).toggleClass('dark');
 		});
-
-        $("#contract").change(function() {
-//	TODO: abilitare checkbox in base alla presenza o meno nel config.json delle condizioni imposte dalla select
-// 	es: select --> vendita --> disabilitare checkbox mioaffitto
-            console.log($(this).val())
-        });
-
-        $("#typology").change(function() {
-//	TODO: abilitare checkbox in base alla presenza o meno nel config.json delle condizioni imposte dalla select
-// 	es: select --> vendita --> disabilitare checkbox mioaffitto
-            console.log($(this).val())
-        });
-		
-		//TODO: recuperare la preferenza salvata nello storage settata al click
-		let state = "it";
-		config = globalConfig[state];
 
 		//Draw site list
 		redrawSiteList(config);
@@ -118,14 +117,26 @@ $(function () {
 			});
 
 			if(!_.isEmpty(city)) {
-                //Open Tabs
-                _.forEach(urls, function (url) {
-                    chrome.tabs.create({url: url})
-                });
-            }else{
+				//Open Tabs
+				_.forEach(urls, function (url) {
+					chrome.tabs.create({url: url})
+				});
+			}else{
 				// $('#city').style.border = "1px solid red"
-            }
+			}
+		});
+		
+		
+		$("#contract").change(function() {
+//	TODO: abilitare checkbox in base alla presenza o meno nel config.json delle condizioni imposte dalla select
+// 	es: select --> vendita --> disabilitare checkbox mioaffitto
+			console.log($(this).val())
 		});
 
+		$("#typology").change(function() {
+//	TODO: abilitare checkbox in base alla presenza o meno nel config.json delle condizioni imposte dalla select
+// 	es: select --> vendita --> disabilitare checkbox mioaffitto
+			console.log($(this).val())
+		});
 	});
-});
+}

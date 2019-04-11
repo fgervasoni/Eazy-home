@@ -1,4 +1,5 @@
 var Language = {
+	flagsList : $("#flags-list"),
 	menuButton : $("#language-menu"),
 	showLanguagePageSelection: function(){
 		var deferred = Q.defer();
@@ -6,10 +7,10 @@ var Language = {
 		$("#containerSearch").hide();
 		$("#containerFlags").show();
 		try {
-			if(flagsList.is(':empty')){
+			if(Language.flagsList.is(':empty')){
 				$.getJSON('flags.json', function(flags) {
 					_.forOwn(flags, function(value){
-						flagsList.append('<img id="'+value.code+'" class="flag" src="'+value.image+'">');			
+						Language.flagsList.append('<img id="'+value.code+'" class="flag" src="'+value.image+'">');			
 					});
 					Language.addClickListener(deferred);
 				});
@@ -26,7 +27,8 @@ var Language = {
 		try {
 			$.getJSON('languages.json', function(languagesConfig) {
 				//TODO: salvare il codice della lingua
-				$('body').translate({lang: language, t: languagesConfig.dictionary});
+				chrome.storage.sync.set({language: language})
+				var translator = $('body').translate({lang: language, t: languagesConfig.dictionary});
 				$("#containerFlags").hide();
 				$("#containerSearch").show();
 				deferred.resolve();

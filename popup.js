@@ -9,7 +9,6 @@ let menu =  $("#menu");
 let closeMenu =  $("#closeMenu");
 let theme = $(".theme");
 let sideNav = $("#sideNav");
-let country = $("#country");
 
 
 //TODO: spostare in un file di utils.js
@@ -17,12 +16,6 @@ String.prototype.replaceAll = function (find, replace) {
     var str = this;
     return str.replace(new RegExp(find.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'g'), replace);
 };
-
-country.click(function(element){
-	$("#containerCountry")[0].hidden = false;
-	$("#containerSearch")[0].hidden = true;
-});
-
 
 menu.click(function(element) {
 	sideNav[0].style.width = "250px";
@@ -48,17 +41,34 @@ $(function () {
 	
 	$.getJSON('config.json', function(data) {
 		globalConfig = data;
+		
+		$.getJSON('country.json', function(data) {
+			countryConfig = data;
+			_.forOwn(countryConfig.countries, function(value){
+				countryList.append('<img id="'+value.code+'" class="country" src="'+value.image+'">');			
+			});
+			let country = $(".country");
+			country.click(function(element){
+
+				Language.setLanguage("it");
+
+				//TODO: salvare il codice del country nello storage prima di andare alla pagina successiva
+				$("#containerCountry").hide();
+				$("#containerSearch").show();
+				sideNav[0].style.width = "0";
+			});
+		});
 
 		//TODO: salvare nello storage la preferenza del tema
 		theme.click(function(element){
 
 			var isHidden = $("#themeLight")[0].hidden;
 			if(!isHidden){
-				$("#themeBlack")[0].hidden = false;
-				$("#themeLight")[0].hidden = true;
+				$("#themeBlack").show();
+				$("#themeLight").hide();
 			}else{
-				$("#themeBlack")[0].hidden = true;
-				$("#themeLight")[0].hidden = false;
+				$("#themeBlack").hide();
+				$("#themeLight").show();
 			}
 
 			$(document.body).toggleClass('light');
@@ -128,25 +138,5 @@ $(function () {
             }
 		});
 
-	});
-
-	$.getJSON('country.json', function(data) {
-		countryConfig = data;
-		_.forOwn(countryConfig.countries, function(value){
-			countryList.append('<img id="'+value.code+'" class="country" src="'+value.image+'">');			
-		});
-		let country = $(".country");
-		country.click(function(element){
-
-			$.getJSON('languages.json', function(data) {
-				languagesConfig = data;
-				let translator = $('body').translate({lang: element.currentTarget.id, t: languagesConfig.dictionary});
-			});
-
-			//TODO: salvare il codice del country nello storage prima di andare alla pagina successiva
-			$("#containerCountry")[0].hidden = true;
-			$("#containerSearch")[0].hidden = false;
-			sideNav[0].style.width = "0";
-		});
 	});
 });

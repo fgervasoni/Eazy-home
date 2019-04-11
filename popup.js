@@ -8,13 +8,6 @@ let sideNav = $("#sideNav");
 let browserLang = navigator.language ? navigator.language.split("-")[0] : ( navigator.userLanguage ? navigator.userLanguage.split("-")[0] : "en");
 
 
-//TODO: spostare in un file di utils.js
-String.prototype.replaceAll = function (find, replace) {
-    var str = this;
-    return str.replace(new RegExp(find.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'g'), replace);
-};
-
-
 var redrawSiteList = function(config, selectedFields){
 	var disabled = false;
 	siteList.empty();

@@ -1,6 +1,5 @@
 var Language = {
 	flagsList : $("#flags-list"),
-	menuButton : $("#language-menu"),
 	selectLanguage: $("#language-menu-select"),
 	showLanguagePageSelection: function(){
 		var deferred = Q.defer();
@@ -48,7 +47,3 @@ var Language = {
 		});
 	}
 }
-
-Language.menuButton.click(function(element){
-	Language.showLanguagePageSelection();
-});

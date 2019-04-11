@@ -3,8 +3,6 @@ let config = {};
 let titleDiv = $("#titleDiv");
 let search =  $("#search");
 let siteList =  $("#site-list");
-let menu =  $("#menu");
-let closeMenu =  $("#closeMenu");
 let theme = $(".theme");
 let sideNav = $("#sideNav");
 let browserLang = navigator.language ? navigator.language.split("-")[0] : ( navigator.userLanguage ? navigator.userLanguage.split("-")[0] : "en");
@@ -16,13 +14,6 @@ String.prototype.replaceAll = function (find, replace) {
     return str.replace(new RegExp(find.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'g'), replace);
 };
 
-menu.click(function(element) {
-	sideNav[0].style.width = "250px";
-});
-
-closeMenu.click(function(element) {
-	sideNav[0].style.width = "0";
-});
 
 var redrawSiteList = function(config, selectedFields){
 	var disabled = false;

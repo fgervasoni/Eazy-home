@@ -1,6 +1,5 @@
 var Country = {
     flagsList : $("#flags-list"),
-	menuButton: $("#country-menu"),
 	showCountryPageSelection: function(countries){
 		var deferred = Q.defer();
 		//TODO: cambiare title "Scegli country"
@@ -43,10 +42,3 @@ var Country = {
 		});
 	}
 }
-
-
-Country.menuButton.click(function(element){
-	Country.showCountryPageSelection().then(function(countryCode){	
-		initApp();
-	});
-});

@@ -2,113 +2,116 @@
 <html>
     <head>
         <meta charset="utf-8" />
-
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     </head>
-
-    <body>
-
-    <!--PAESE-->
-    <div id="containerFlags" class="container" style="margin-bottom: 15px; height: 250px;" style="display: none">
-        <h5 style="text-align: center">Select a Country</h5><!-- TODO: titolo dinamico lingua/country -->
-        <div id="flags-list" class="center"></div>
-        <!--<div style="font-size: 10px; text-align: center">Icons made by-->
-            <!--<a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a-->
-                    <!--href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a-->
-                    <!--href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC-->
-                <!--3.0 BY</a>-->
-        <!--</div>-->
-    </div>
-
-
-    <div id="containerSearch" class="container" >
-
-    <!--MENU-->
-    <div id="sideNav" class="sidenav light">
-        <a id="closeMenu" class="closebtn">&times;</a>
-        <a id="country-menu" class="trn">country</a>
-        <!-- <a id="language-menu" class="trn">language</a> -->
-    </div>
-
-        <!--TITOLO-->
+	
+	<header>
+		<!--TITOLO-->
         <div id="titleDiv" class="dark">
             <span id="menu" style="float: left; cursor:pointer">&#9776;</span>
             <span id="title">Homeless</span>
             <span class="theme" id="themeLight" style="float: right; cursor:pointer">&#9728;</span>
             <span class="theme" id="themeBlack" style="float: right; cursor:pointer; display: none">&#9790;</span>
         </div>
+	</header>
+	
+    <body>
 
-        <!--FILTRI-->
-        <div class="filters">
-            <div class="row">
-                <div class="col-xs-12 center">
-                    <label class="trn" for="city">city</label>
-                    <input id="city" type="text" class="form-control city" placeholder="Città">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6 center">
-                    <label class="trn" for="contract">contract</label>
-                    <select id="contract" class="form-control">
-                        <option class="trn" selected="selected" value="rent">rent</option>
-                        <option class="trn" value="sell">sell</option>
-                    </select>
-                </div>
-                <div class="col-xs-6 center">
-                    <label class="trn" for="typology">typology</label>
-                    <select id="typology" class="form-control" >
-                        <option class="trn" value="room">room</option>
-                        <option class="trn" selected="selected" value="flat">flat</option>
-						<option class="trn" value="house">house</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6 center">
-                    <label class="trn" for="minPrice">minPrice</label>
-                    <input id="minPrice" type="number" class="form-control" step="50" min="0" placeholder="Euro (€)">
-                </div>
-                <div class="col-xs-6 center">
-                    <label class="trn" for="maxPrice">maxPrice</label>
-                    <input id="maxPrice" type="number" class="form-control" step="50" min="0" placeholder="Euro (€)">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6 center">
-                    <label class="trn" for="minArea">minArea</label>
-                    <input id="minArea" type="number" class="form-control" step="10" min="0" placeholder="Metri quadri (m²)">
-                </div>
-                <div class="col-xs-6 center">
-                    <label class="trn" for="maxArea">maxArea</label>
-                    <input id="maxArea" type="number" class="form-control" step="10" min="0" placeholder="Metri quadri (m²)">
-                </div>
-            </div>
-        </div>
+		<!--CHOOSE COUNTRY-->
+		<div id="containerFlags" class="container" style="margin-bottom: 15px; height: 250px;" style="display: none">
+			<h5 style="text-align: center">Select a Country</h5><!-- TODO: titolo dinamico lingua/country -->
+			<div id="flags-list" class="center"></div>
+			<!--<div style="font-size: 10px; text-align: center">Icons made by-->
+				<!--<a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a-->
+						<!--href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a-->
+						<!--href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC-->
+					<!--3.0 BY</a>-->
+			<!--</div>-->
+		</div>
+		
+		<!--MAIN PAGE-->
+		<div id="containerSearch" class="container" >
 
-        <!--ICONE-->
-        <div class="row" style="padding-top: 5px;">
-            <div id="site-list" class="col-xs-12 center"></div>
-        </div>
+			<!--MENU-->
+			<div id="sideNav" class="sidenav light">
+				<a id="closeMenu" class="closebtn">&times;</a>
+				<a id="country-menu" class="trn">country</a>
+				<!-- <a id="language-menu" class="trn">language</a> -->
+			</div>
 
-        <!--CERCA-->
-        <div class="row" style="text-align: center">
-            <div class="col-xs-12 center">
-                <button id="search" type="button" class="btn btn-primary">Search</button>
-            </div>
-        </div>
+			<!--FILTRI-->
+			<div class="filters">
+				<div class="row">
+					<div class="col-xs-12 center">
+						<label class="trn" for="city">city</label>
+						<input id="city" type="text" class="form-control city" placeholder="City">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6 center">
+						<label class="trn" for="contract">contract</label>
+						<select id="contract" class="form-control">
+							<option class="trn" selected="selected" value="rent">rent</option>
+							<option class="trn" value="sell">sell</option>
+						</select>
+					</div>
+					<div class="col-xs-6 center">
+						<label class="trn" for="typology">typology</label>
+						<select id="typology" class="form-control" >
+							<option class="trn" value="room">room</option>
+							<option class="trn" selected="selected" value="flat">flat</option>
+							<option class="trn" value="house">house</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6 center">
+						<label class="trn" for="minPrice">minPrice</label>
+						<input id="minPrice" type="number" class="form-control" step="50" min="0" placeholder="Euro (€)">
+					</div>
+					<div class="col-xs-6 center">
+						<label class="trn" for="maxPrice">maxPrice</label>
+						<input id="maxPrice" type="number" class="form-control" step="50" min="0" placeholder="Euro (€)">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6 center">
+						<label class="trn" for="minArea">minArea</label>
+						<input id="minArea" type="number" class="form-control" step="10" min="0" placeholder="Square meters (m²)">
+					</div>
+					<div class="col-xs-6 center">
+						<label class="trn" for="maxArea">maxArea</label>
+						<input id="maxArea" type="number" class="form-control" step="10" min="0" placeholder="Square meters (m²)">
+					</div>
+				</div>
+			</div>
 
-    </div>
-        <script src="js-library/jquery-3.3.1.min.js"></script>
-        <script src="js-library/bootstrap.bundle.min.js"></script>
+			<!--ICONE-->
+			<div class="row" style="padding-top: 5px;">
+				<div id="site-list" class="col-xs-12 center"></div>
+			</div>
+
+			<!--CERCA-->
+			<div class="row" style="text-align: center">
+				<div class="col-xs-12 center">
+					<button id="search" type="button" class="btn btn-primary trn">search</button>
+				</div>
+			</div>
+
+		</div>
+		
+		
+		<script src="js-library/jquery-3.3.1.min.js"></script>
+		<script src="js-library/bootstrap.bundle.min.js"></script>
 		<script src="js-library/lodash.js"></script>
-        <script src="js-library/jquery.translate.js"></script>
-        <script src="js-library/q.js"></script>
+		<script src="js-library/jquery.translate.js"></script>
+		<script src="js-library/q.js"></script>
 		<script src="js-files/utils.js"></script>
 		<script src="js-files/country.js"></script>
 		<script src="js-files/language.js"></script>
 		<script src="js-files/side-menu.js"></script>
-        <script src="js-files/popup.js"></script>
-        <script src="js-files/theme.js"></script>
+		<script src="popup.js"></script>
+		<script src="js-files/theme.js"></script>
     </body>
 </html>

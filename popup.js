@@ -3,7 +3,6 @@ let config = {};
 let titleDiv = $("#titleDiv");
 let search =  $("#search");
 let siteList =  $("#site-list");
-let sideNav = $("#sideNav");
 let browserLang = navigator.language ? navigator.language.split("-")[0] : ( navigator.userLanguage ? navigator.userLanguage.split("-")[0] : "en");
 
 
@@ -25,7 +24,7 @@ $(function () {
 	$.getJSON('json-files/config.json', function(data) {
 		globalConfig = data;
 		
-		//TODO: se non è salvato un country aprire la pagina, altrimenti andare al form di ricerca
+		//Se non è salvato un country aprire la pagina, altrimenti andare al form di ricerca
 		chrome.storage.sync.get('country', function(data) {
 		  if (!data.country) {
 			Country.showCountryPageSelection().then(function(countryCode){

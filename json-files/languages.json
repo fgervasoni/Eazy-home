@@ -3,6 +3,7 @@
         "city": {
             "it": "Città*",
             "uk": "City*",
+			"en": "City*",
             "de": "",
             "fr": "",
             "es": "",
@@ -11,6 +12,7 @@
         "contract": {
             "it": "Contratto",
             "uk": "Contract",
+			"en": "Contract",
             "de": "",
             "fr": "",
             "es": "",
@@ -19,6 +21,7 @@
         "typology": {
             "it": "Tipologia",
             "uk": "Typology",
+			"en": "Typology",
             "de": "",
             "fr": "",
             "es": "",
@@ -27,6 +30,7 @@
         "minPrice": {
             "it": "Prezzo minimo",
             "uk": "Min price",
+			"en": "Min price",
             "de": "",
             "fr": "",
             "es": "",
@@ -35,6 +39,7 @@
         "maxPrice": {
             "it": "Prezzo massimo",
             "uk": "Max price",
+			"en": "Max price",
             "de": "",
             "fr": "",
             "es": "",
@@ -43,6 +48,7 @@
         "minArea": {
             "it": "Area minima",
             "uk": "Min area",
+			"en": "Min area",
             "de": "",
             "fr": "",
             "es": "",
@@ -51,6 +57,7 @@
         "maxArea": {
             "it": "Area massima",
             "uk": "Max area",
+			"en": "Max area",
             "de": "",
             "fr": "",
             "es": "",
@@ -59,6 +66,7 @@
         "country": {
             "it": "Paese",
             "uk": "Country",
+			"en": "Country",
             "de": "",
             "fr": "",
             "es": "",
@@ -67,6 +75,7 @@
         "rent": {
             "it": "Affitto",
             "uk": "Rent",
+			"en": "Rent",
             "de": "",
             "fr": "",
             "es": "",
@@ -75,6 +84,7 @@
         "sell": {
             "it": "Vendita",
             "uk": "Sell",
+			"en": "Sell",
             "de": "",
             "fr": "",
             "es": "",
@@ -83,6 +93,7 @@
         "room": {
             "it": "Stanza",
             "uk": "Room",
+			"en": "Room",
             "de": "",
             "fr": "",
             "es": "",
@@ -91,6 +102,7 @@
         "flat": {
             "it": "Appartamento",
             "uk": "Flat",
+			"en": "Flat",
             "de": "",
             "fr": "",
             "es": "",
@@ -99,6 +111,7 @@
         "house": {
             "it": "Casa indipendente",
             "uk": "House",
+			"en": "House",
             "de": "",
             "fr": "",
             "es": "",
@@ -107,10 +120,29 @@
         "language": {
             "it": "Lingua",
             "uk": "Language",
+			"en": "Language",
             "de": "",
             "fr": "",
             "es": "",
             "pt": ""
+        },
+		"search": {
+            "it": "Cerca",
+            "uk": "Search",
+			"en": "Search",
+            "de": "",
+            "fr": "",
+            "es": "",
+            "pt": ""
+        },
+		"measurement": {
+            "it": "Metri quadri (m²)",
+            "uk": "Square meters (m²)",
+			"en": "Square meters (m²)",
+            "de": "Quadratmeter (m²)",
+            "fr": "Mètres carrés (m²)",
+            "es": "Metros cuadrados (m²)",
+            "pt": "Metros quadrados (m²)"
         }
     }
 }

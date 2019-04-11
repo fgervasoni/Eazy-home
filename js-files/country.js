@@ -7,7 +7,7 @@ var Country = {
 		$("#containerFlags").show();
 		try {
 			if(Country.flagsList.is(':empty')){
-				$.getJSON('json-files/flags.json', function(flags) {
+				$.getJSON('../json-files/flags.json', function(flags) {
 					_.forOwn(flags, function(value){
 						Country.flagsList.append('<img id="'+value.code+'" class="flag" src="'+value.image+'">');			
 					});
@@ -27,7 +27,7 @@ var Country = {
 			chrome.storage.sync.set({country: element.target.id})
 			$("#containerFlags").hide();
 			$("#containerSearch").show();
-			sideNav[0].style.width = "0";
+			sideNav.style.width = "0";
 			deferred.resolve(element.target.id);
 		} catch(e) {
 			deferred.reject("Fail to load languages config");

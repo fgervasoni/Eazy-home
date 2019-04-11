@@ -1,4 +1,5 @@
 var SideMenu = {
+    sideNav : $("#sideNav"),
 	openBtn : $("#menu"),
 	closeBtn :  $("#closeMenu"),
 	LanguageButton : $("#language-menu"),
@@ -6,11 +7,11 @@ var SideMenu = {
 }
 
 SideMenu.openBtn.click(function(element) {
-	sideNav[0].style.width = "250px";
+	SideMenu.sideNav[0].style.width = "250px";
 });
 
 SideMenu.closeBtn.click(function(element) {
-	sideNav[0].style.width = "0";
+	SideMenu.sideNav[0].style.width = "0";
 });
 
 SideMenu.CountryButton.click(function(element){

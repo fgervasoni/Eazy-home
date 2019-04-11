@@ -7,7 +7,7 @@ var Language = {
 		$("#containerFlags").show();
 		try {
 			if(Language.flagsList.is(':empty')){
-				$.getJSON('flags.json', function(flags) {
+				$.getJSON('../json-files/flags.json', function(flags) {
 					_.forOwn(flags, function(value){
 						Language.flagsList.append('<img id="'+value.code+'" class="flag" src="'+value.image+'">');
 						Language.selectLanguage.append($('<option>', {
@@ -29,12 +29,14 @@ var Language = {
 	setLanguage : function(language){
 		var deferred = Q.defer();
 		try {
-			$.getJSON('json-files/languages.json', function(languagesConfig) {
+			$.getJSON('../json-files/languages.json', function(languagesConfig) {
 				chrome.storage.sync.set({language: language})
 				var translator = $('body').translate({lang: language, t: languagesConfig.dictionary});
 				$("#containerFlags").hide();
 				$("#containerSearch").show();
 				deferred.resolve();
+			}, function(error){
+				console.error(error)
 			});
 		} catch(e) {
 			deferred.reject("Fail to load languages config");

@@ -4,47 +4,41 @@
 		"language" : "Italiano",
 		"image": "images/italy.png",
 		"code": "it",
-		"currency": "EUR (€)",
-		"measurement": "Metri quadri (m²)"
+		"currency": "EUR (€)"
 	},
 	"unitedKingdom": {
 		"name" : "United Kingdom",
 		"language" : "English",
 		"image": "images/united-kingdom.png",
 		"code": "uk",
-		"currency": "GBP (£)",
-		"measurement": "Square meters (m²)"
+		"currency": "GBP (£)"
 	},
 	"germany": {
 		"name" : "Deutschland",
 		"language" : "Deutsch",
 		"image": "images/germany.png",
 		"code": "de",
-		"currency": "EUR (€)",
-		"measurement": "Quadratmeter (m²)"
+		"currency": "EUR (€)"
 	},
 	"france": {
 		"name" : "France",
 		"language" : "Français",
 		"image": "images/france.png",
 		"code": "fr",
-		"currency": "EUR (€)",
-		"measurement": "Mètres carrés (m²)"
+		"currency": "EUR (€)"
 	},
 	"spain": {
 		"name" : "España",
 		"language" : "Español",
 		"image": "images/spain.png",
 		"code": "es",
-		"currency": "EUR (€)",
-		"measurement": "Metros cuadrados (m²)"
+		"currency": "EUR (€)"
 	},
 	"portugal": {
 		"name" : "Portugal",
 		"language" : "Português",
 		"image": "images/portugal.png",
 		"code": "pt",
-		"currency": "EUR (€)",
-		"measurement": "Metros quadrados (m²)"
+		"currency": "EUR (€)"
 	}
 }

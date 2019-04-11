@@ -9,7 +9,7 @@ let menu =  $("#menu");
 let closeMenu =  $("#closeMenu");
 let theme = $(".theme");
 let sideNav = $("#sideNav");
-let lang = $("#lang");
+let country = $("#country");
 
 
 //TODO: spostare in un file di utils.js
@@ -18,7 +18,7 @@ String.prototype.replaceAll = function (find, replace) {
     return str.replace(new RegExp(find.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'g'), replace);
 };
 
-lang.click(function(element){
+country.click(function(element){
 	$("#containerCountry")[0].hidden = false;
 	$("#containerSearch")[0].hidden = true;
 });

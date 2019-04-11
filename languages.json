@@ -55,6 +55,54 @@
             "fr": "",
             "es": "",
             "pt": ""
+        },
+        "country": {
+            "it": "Paese",
+            "uk": "Country",
+            "de": "",
+            "fr": "",
+            "es": "",
+            "pt": ""
+        },
+        "rent": {
+            "it": "Affitto",
+            "uk": "Rent",
+            "de": "",
+            "fr": "",
+            "es": "",
+            "pt": ""
+        },
+        "sell": {
+            "it": "Vendita",
+            "uk": "Sell",
+            "de": "",
+            "fr": "",
+            "es": "",
+            "pt": ""
+        },
+        "room": {
+            "it": "Stanza",
+            "uk": "Room",
+            "de": "",
+            "fr": "",
+            "es": "",
+            "pt": ""
+        },
+        "flat": {
+            "it": "Appartamento",
+            "uk": "Flat",
+            "de": "",
+            "fr": "",
+            "es": "",
+            "pt": ""
+        },
+        "house": {
+            "it": "Casa indipendente",
+            "uk": "House",
+            "de": "",
+            "fr": "",
+            "es": "",
+            "pt": ""
         }
     }
 }

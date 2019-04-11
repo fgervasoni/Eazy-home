@@ -1,16 +1,21 @@
 var Language = {
 	flagsList : $("#flags-list"),
 	menuButton : $("#language-menu"),
+	selectLanguage: $("#language-menu-select"),
 	showLanguagePageSelection: function(){
 		var deferred = Q.defer();
-		//TODO: cambiare title "Scegli language"
 		$("#containerSearch").hide();
 		$("#containerFlags").show();
 		try {
 			if(Language.flagsList.is(':empty')){
 				$.getJSON('flags.json', function(flags) {
 					_.forOwn(flags, function(value){
-						Language.flagsList.append('<img id="'+value.code+'" class="flag" src="'+value.image+'">');			
+						Language.flagsList.append('<img id="'+value.code+'" class="flag" src="'+value.image+'">');
+						Language.selectLanguage.append($('<option>', {
+							id: value.code,
+							text: value.language,
+							value: value.code,
+						}));
 					});
 					Language.addClickListener(deferred);
 				});

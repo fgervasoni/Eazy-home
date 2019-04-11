@@ -3,7 +3,6 @@ let config = {};
 let titleDiv = $("#titleDiv");
 let search =  $("#search");
 let siteList =  $("#site-list");
-let theme = $(".theme");
 let sideNav = $("#sideNav");
 let browserLang = navigator.language ? navigator.language.split("-")[0] : ( navigator.userLanguage ? navigator.userLanguage.split("-")[0] : "en");
 
@@ -51,27 +50,6 @@ var initApp = function(){
 		
 		$("#containerFlags").hide();
 		$("#containerSearch").show();
-		
-		//TODO: salvare nello storage la preferenza del tema
-		theme.click(function(element){
-			var isHidden = $("#themeLight")[0].hidden;
-			if(!isHidden){
-				$("#themeBlack").show();
-				$("#themeLight").hide();
-			}else{
-				$("#themeBlack").hide();
-				$("#themeLight").show();
-			}
-
-			$(document.body).toggleClass('light');
-			$(document.body).toggleClass('dark');
-
-			$(titleDiv).toggleClass('light');
-			$(titleDiv).toggleClass('dark');
-
-			$(sideNav).toggleClass('light');
-			$(sideNav).toggleClass('dark');
-		});
 
 		//Draw site list
 		redrawSiteList(config);

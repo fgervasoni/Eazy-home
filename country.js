@@ -11,14 +11,10 @@ var Country = {
 					_.forOwn(flags, function(value){
 						flagsList.append('<img id="'+value.code+'" class="flag" src="'+value.image+'">');			
 					});
-					$(".flag").click(function(element){
-						Country.setCountry(element).then(function(countryCode){
-							deferred.resolve(countryCode);
-						})
-					});
+					Country.addClickListener(deferred);
 				});
 			} else {
-				deferred.resolve()
+				Country.addClickListener(deferred);
 			}
 		} catch(e) {
 			deferred.reject("Fail to load country config");
@@ -37,6 +33,13 @@ var Country = {
 			deferred.reject("Fail to load languages config");
 		}
 		return deferred.promise;
+	},
+	addClickListener: function(deferred){
+		$(".flag").click(function(element){
+			Country.setCountry(element).then(function(countryCode){
+				deferred.resolve(countryCode);
+			})
+		});
 	}
 }
 

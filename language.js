@@ -11,13 +11,10 @@ var Language = {
 					_.forOwn(flags, function(value){
 						flagsList.append('<img id="'+value.code+'" class="flag" src="'+value.image+'">');			
 					});
-					$(".flag").click(function(element){
-						Language.setLanguage(element.target.id);
-					});
-					deferred.resolve()
+					Language.addClickListener(deferred);
 				});
 			} else {
-				deferred.resolve()
+				Language.addClickListener(deferred);
 			}
 		} catch(e) {
 			deferred.reject("Fail to load flags config");
@@ -38,8 +35,12 @@ var Language = {
 			deferred.reject("Fail to load languages config");
 		}
 		return deferred.promise;
+	},
+	addClickListener: function(){
+		$(".flag").click(function(element){
+			Language.setLanguage(element.target.id);
+		});
 	}
-
 }
 
 Language.menuButton.click(function(element){

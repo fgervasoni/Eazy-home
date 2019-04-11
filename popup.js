@@ -50,8 +50,7 @@ $(function () {
 			let country = $(".country");
 			country.click(function(element){
 
-				Language.setLanguage("it");
-
+				Language.setLanguage(element.currentTarget.id);
 				//TODO: salvare il codice del country nello storage prima di andare alla pagina successiva
 				$("#containerCountry").hide();
 				$("#containerSearch").show();

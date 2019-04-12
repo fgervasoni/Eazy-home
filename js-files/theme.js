@@ -32,8 +32,8 @@ var Theme = {
 				$(document.body).removeClass('light');
 				$(document.body).addClass('dark');
 				//Cambio tema navbar
-				$(titleDiv).removeClass('light');
-				$(titleDiv).addClass('dark');
+				$(titleDiv).addClass('light');
+				$(titleDiv).removeClass('dark');
 				//Cambio tema sidebar
 				$(sideNav).removeClass('light');
 				$(sideNav).addClass('dark');

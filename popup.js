@@ -20,6 +20,7 @@ var redrawSiteList = function(config, selectedFields){
 //INIT FUNCTION
 $(function () {
 	$('[data-toggle="tooltip"]').tooltip();
+	Theme.init();
 	
 	$.getJSON('json-files/config.json', function(data) {
 		globalConfig = data;
@@ -43,6 +44,7 @@ $(function () {
 });
 
 var initApp = function(){
+
 	chrome.storage.sync.get('country', function(data) {
 		config = globalConfig[data.country];
 		

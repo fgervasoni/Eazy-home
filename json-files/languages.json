@@ -143,6 +143,15 @@
             "fr": "Mètres carrés (m²)",
             "es": "Metros cuadrados (m²)",
             "pt": "Metros quadrados (m²)"
+        },
+		"select_country": {
+            "it": "Seleziona un paese",
+            "uk": "Select a country",
+			"en": "Select a country",
+            "de": "",
+            "fr": "",
+            "es": "",
+            "pt": ""
         }
     }
 }

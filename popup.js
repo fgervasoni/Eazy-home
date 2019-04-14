@@ -6,15 +6,28 @@ let siteList =  $("#site-list");
 let browserLang = navigator.language ? navigator.language.split("-")[0] : ( navigator.userLanguage ? navigator.userLanguage.split("-")[0] : "en");
 
 
-var redrawSiteList = function(config, selectedFields){
-	var disabled = false;
-	siteList.empty();
-	_.forOwn(config, function(value, key){
-		siteList.append('<span class="searchBtn">' +
-			'<input type="checkbox" checked value="'+key+'" ' + (disabled ? 'disabled' : '' )+ '/>' +
-		   ' <img data-toggle="tooltip" data-placement="top" title="' + key +'" src="'+ value.icon +'" class="icon">' +
-	    '</span>');
-	});
+var redrawSiteList = function(config){
+	let disabled = false;
+	let checked = true;
+
+	loadFormModel().then(function(model){
+		let contractSelected = model ? model.contract : null;
+		let typologySelected = model ? model.typology : null;
+		
+		siteList.empty();
+		_.forOwn(config, function(value, key){
+			//Check site to disable
+			if(!config[key].contract[contractSelected] || !config[key].typology[typologySelected]) {
+				disabled = true;
+				checked = false;
+			}
+			siteList.append('<span class="searchBtn">' +
+				'<input type="checkbox" value="'+key+'" ' + (checked ? 'checked' : '' ) + ' ' + (disabled ? 'disabled' : '' )+ '/>' +
+				 ' <img data-toggle="tooltip" data-placement="top" title="' + key +'" src="'+ value.icon +'" class="icon">' +
+				'</span>');
+		});
+	})
+	
 }
 
 //INIT FUNCTION
@@ -74,12 +87,13 @@ var initApp = function(){
 			let urls = [];
 			_.forEach(checkedValues, function(value){
 				let siteConfig = config[value];
-				let url = siteConfig.base_url + siteConfig.required_filters.replaceAll("{{typeRentSell}}", siteConfig.typeRentSell[contract]).replaceAll("{{typeHouse}}", siteConfig.typeHouse[typology]).replaceAll("{{city}}", city); 
+				let url = siteConfig.base_url + siteConfig.required_filters.replaceAll("{{contract}}", siteConfig.contract[contract]).replaceAll("{{typology}}", siteConfig.typology[typology]).replaceAll("{{city}}", city); 
 				_.forOwn(filters, function(value, key){
 					if(!_.isEmpty(value)){
 						url += siteConfig.optional_filters[key].replace("{{"+key+"}}", value) + '&';
 					}
 				});
+				if(url[url.length-1] == '&') url = url.slice(0, -1);
 				urls.push(url);
 			});
 
@@ -89,21 +103,38 @@ var initApp = function(){
 					chrome.tabs.create({url: url})
 				});
 			}else{
-				// $('#city').style.border = "1px solid red"
+				$('#city')[0].style.border = "1px solid red"
 			}
 		});
 		
-		
+
+		//TODO: si posso riunire?
+		$("#city").change(function() {
+			saveFormModel();
+		});
+		$("#minPrice").change(function() {
+			saveFormModel();
+		});
+		$("#maxPrice").change(function() {
+			saveFormModel();
+		});
+		$("#minArea").change(function() {
+			saveFormModel();
+		});
+		$("#maxArea").change(function() {
+			saveFormModel();
+		});
+
 		$("#contract").change(function() {
-//	TODO: abilitare checkbox in base alla presenza o meno nel config.json delle condizioni imposte dalla select
-// 	es: select --> vendita --> disabilitare checkbox mioaffitto
-			console.log($(this).val())
+			saveFormModel().then(function(){
+				redrawSiteList(config);
+			})
 		});
 
 		$("#typology").change(function() {
-//	TODO: abilitare checkbox in base alla presenza o meno nel config.json delle condizioni imposte dalla select
-// 	es: select --> vendita --> disabilitare checkbox mioaffitto
-			console.log($(this).val())
+			saveFormModel().then(function(){
+				redrawSiteList(config);
+			})
 		});
 	});
 }

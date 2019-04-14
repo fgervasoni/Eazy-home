@@ -4,12 +4,12 @@
 			"name": "Immobiliare",
 			"icon": "images/immobiliare.png",
 			"base_url": "https://www.immobiliare.it",
-			"required_filters": "/{{typeRentSell}}-{{typeHouse}}/{{city}}/?criterio=rilevanza&",
-			"typeRentSell": {
+			"required_filters": "/{{contract}}-{{typology}}/{{city}}/?criterio=rilevanza&",
+			"contract": {
 				"rent": "affitto",
 				"sell": "vendita"
 			},		
-			"typeHouse" : {
+			"typology" : {
 				"house": "case-indipendenti",
 				"flat": "appartamenti",
 				"room": "appartamenti"
@@ -26,12 +26,12 @@
 			"name": "Idealista",
 			"icon": "images/idealista.png",
 			"base_url": "https://www.idealista.it",
-			"required_filters": "/{{typeRentSell}}-{{typeHouse}}/{{city}}-{{city}}/",
-			"typeRentSell" : {
+			"required_filters": "/{{contract}}-{{typology}}/{{city}}-{{city}}/",
+			"contract" : {
 				"rent": "affitto",
 				"sell": "vendita"
 			},		
-			"typeHouse" : {
+			"typology" : {
 				"house": "case",
 				"flat": "case",
 				"room": "stanze"
@@ -48,12 +48,12 @@
 			"name": "Casa.it",
 			"icon": "images/casa.png",
 			"base_url": "https://www.casa.it",
-			"required_filters": "/{{typeRentSell}}/{{typeHouse}}/{{city}}?",
-			"typeRentSell" : {
+			"required_filters": "/{{contract}}/{{typology}}/{{city}}?",
+			"contract" : {
 				"rent": "affitto",
 				"sell": "vendita"
 			},		
-			"typeHouse" : {
+			"typology" : {
 				"all": "residenziale",
 				"house": "case-indipendenti",
 				"flat": "appartamenti"
@@ -71,10 +71,10 @@
 			"icon": "images/mioaffitto.png",
 			"base_url": "https://www.mioaffitto.it",
 			"required_filters": "/search/?query_string={{city}}&",
-			"typeRentSell" : {
+			"contract" : {
 				"rent": "affitto"
 			},		
-			"typeHouse" : {
+			"typology" : {
 				"all": "TODO",
 				"house": "TODO",
 				"flat": "TODO"

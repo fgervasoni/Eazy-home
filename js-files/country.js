@@ -2,7 +2,6 @@ var Country = {
     flagsList : $("#flags-list"),
 	showCountryPageSelection: function(countries){
 		var deferred = Q.defer();
-		//TODO: cambiare title "Scegli country"
 		$("#containerSearch").hide();
 		$("#containerFlags").show();
 		try {

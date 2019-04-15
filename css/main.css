@@ -4,8 +4,8 @@ html{
 
 body {
     width: 400px;
-    font-family: "Roboto", sans-serif !important;
-    transition: 500ms;
+    font-family: 'Heebo', sans-serif !important;   
+	transition: 500ms;
     padding: 10px;
 }
 

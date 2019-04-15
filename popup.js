@@ -20,11 +20,16 @@ var redrawSiteList = function(config){
 			if(!config[key].contract[contractSelected] || !config[key].typology[typologySelected]) {
 				disabled = true;
 				checked = false;
+			} else {
+				siteList.append('' +
+					'<span class="searchBtn">'+
+					  '<label class="checkbox-inline">'+
+						'<input type="checkbox" data-toggle="toggle"  data-size="xs" value="'+key+'" ' + (checked ? 'checked' : '' ) + ' ' + (disabled ? 'disabled' : '' )+ '>' +
+						'<img data-toggle="tooltip" data-placement="top" title="' + key +'" src="'+ value.icon +'" class="icon">' +
+					  '</label>'+
+					'</span>');
+				$('input:checkbox').bootstrapToggle(); //Workaround injectio from js
 			}
-			siteList.append('<span class="searchBtn">' +
-				'<input type="checkbox" value="'+key+'" ' + (checked ? 'checked' : '' ) + ' ' + (disabled ? 'disabled' : '' )+ '/>' +
-				 ' <img data-toggle="tooltip" data-placement="top" title="' + key +'" src="'+ value.icon +'" class="icon">' +
-				'</span>');
 		});
 	})
 	

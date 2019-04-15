@@ -123,3 +123,47 @@ select{
     height: 250px;
     display: none;
 }
+
+#site-list .switch-handle {
+    display: none;
+}
+
+#site-list .switch.btn {
+    margin-right: 20px;
+}
+
+#site-list .switch-on {
+    right: unset;
+}
+
+#site-list .switch-off {
+    left: unset;
+}
+
+#site-list .switch-off.btn {
+    padding-left: 0;
+}
+
+#site-list .switch-on.btn {
+    padding-right: 0;
+}
+
+#site-list .btn-outline-primary{
+    border-color: transparent;
+    padding: 5px 15px;
+}
+
+#site-list .btn-outline-secondary{
+    border-color: transparent;
+    padding: 5px 5px;
+}
+
+#site-list  .btn-outline-primary:hover {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#site-list  .btn-outline-secondary:hover {
+    background-color: transparent;
+    cursor: pointer;
+}

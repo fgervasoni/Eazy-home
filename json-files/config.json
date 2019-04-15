@@ -5,7 +5,7 @@
 			"icon": "images/immobiliare.png",
 			"icon_off": "images/immobiliare_off.png",
 			"base_url": "https://www.immobiliare.it",
-			"required_filters": "/{{contract}}-{{typology}}/{{city}}/?criterio=rilevanza&",
+			"required_filters": "/{{contract}}-{{typology}}/{{city}}/?criterio=dataModifica&",
 			"contract": {
 				"rent": "affitto",
 				"sell": "vendita"
@@ -21,7 +21,8 @@
 				"minArea": "superficieMinima={{minArea}}",
 				"maxArea": "superficieMassima={{maxArea}}",
 				"separator": "&"
-			}
+			},
+			"end_url": "&ordine=desc"
 		},
 		"idealista": {
 			"name": "Idealista",
@@ -44,7 +45,8 @@
 				"minArea": "dimensione_{{minArea}}",
 				"maxArea": "dimensione-max_{{maxArea}}",
 				"separator": ","
-			}
+			},
+			"end_url": "/?ordine=pubblicazione-desc"
 		},
 		"casa": {
 			"name": "Casa.it",
@@ -67,7 +69,8 @@
 				"minArea": "mqMin={{minArea}}",
 				"maxArea": "mqMax={{maxArea}}",
 				"separator": "&"
-			}
+			},
+			"end_url": "&sortType=date_desc"
 		},
 		"mioaffitto": {
 			"name": "Mio Affitto",
@@ -89,7 +92,8 @@
 				"minArea": "TODO",
 				"maxArea": "TODO",
 				"separator": "&"
-			}
+			},
+			"end_url": "TOOD_DATE_DESC"
 		}
 	}
 }

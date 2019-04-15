@@ -102,6 +102,7 @@ var initApp = function(){
 						url += siteConfig.optional_filters[key].replace("{{"+key+"}}", value) + '&';
 					}
 				});
+				if(siteConfig.end_url) url += siteConfig.end_url;
 				if(url[url.length-1] == '&') url = url.slice(0, -1);
 				urls.push(url);
 			});

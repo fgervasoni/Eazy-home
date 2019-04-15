@@ -3,6 +3,7 @@ var Country = {
 	showCountryPageSelection: function(countries){
 		var deferred = Q.defer();
 		$("#containerSearch").hide();
+		$("#titleDiv").hide();
 		$("#containerFlags").show();
 		try {
 			if(Country.flagsList.is(':empty')){
@@ -25,6 +26,7 @@ var Country = {
 		try {
 			chrome.storage.sync.set({country: element.target.id})
 			$("#containerFlags").hide();
+			$("#titleDiv").show();
 			$("#containerSearch").show();
 			sideNav.style.width = "0";
 			deferred.resolve(element.target.id);

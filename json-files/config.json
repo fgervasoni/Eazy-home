@@ -3,6 +3,7 @@
 		"immobiliare": {
 			"name": "Immobiliare",
 			"icon": "images/immobiliare.png",
+			"icon_off": "images/immobiliare_off.png",
 			"base_url": "https://www.immobiliare.it",
 			"required_filters": "/{{contract}}-{{typology}}/{{city}}/?criterio=rilevanza&",
 			"contract": {
@@ -25,6 +26,7 @@
 		"idealista": {
 			"name": "Idealista",
 			"icon": "images/idealista.png",
+			"icon_off": "images/idealista_off.png",
 			"base_url": "https://www.idealista.it",
 			"required_filters": "/{{contract}}-{{typology}}/{{city}}-{{city}}/",
 			"contract" : {
@@ -47,6 +49,7 @@
 		"casa": {
 			"name": "Casa.it",
 			"icon": "images/casa.png",
+			"icon_off": "images/casa_off.png",
 			"base_url": "https://www.casa.it",
 			"required_filters": "/{{contract}}/{{typology}}/{{city}}?",
 			"contract" : {
@@ -69,6 +72,7 @@
 		"mioaffitto": {
 			"name": "Mio Affitto",
 			"icon": "images/mioaffitto.png",
+			"icon_off": "images/mioaffitto_off.png",
 			"base_url": "https://www.mioaffitto.it",
 			"required_filters": "/search/?query_string={{city}}&",
 			"contract" : {

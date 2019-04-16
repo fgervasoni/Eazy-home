@@ -13,7 +13,7 @@ var redrawSiteList = function(config){
 	loadFormModel().then(function(model){
 		let contractSelected = model ? model.contract : "rent";
 		let typologySelected = model ? model.typology : "flat";
-		
+
 		siteList.empty();
 		_.forOwn(config, function(value, key){
 			//Check site to disable
@@ -36,17 +36,17 @@ var redrawSiteList = function(config){
 			}
 		});
 	})
-	
+
 }
 
 //INIT FUNCTION
 $(function () {
 	$('[data-toggle="tooltip"]').tooltip();
 	Theme.init();
-	
+
 	$.getJSON('json-files/config.json', function(data) {
 		globalConfig = data;
-		
+
 		//Se non è salvato un country aprire la pagina, altrimenti andare al form di ricerca
 		chrome.storage.sync.get('country', function(data) {
 		  if (!data.country) {
@@ -61,7 +61,7 @@ $(function () {
 				});
 		  }
 		});
-		
+
 	});
 });
 
@@ -69,14 +69,14 @@ var initApp = function(){
 
 	chrome.storage.sync.get('country', function(data) {
 		config = globalConfig[data.country];
-		
-		
+
+
 		$("#containerFlags").hide();
 		$("#containerSearch").show();
 
 		//Draw site list
 		redrawSiteList(config);
-		
+
 		//Bind click ricerca
 		search.click(function(element) {
 			let city = $('#city').val().toLowerCase();
@@ -96,7 +96,7 @@ var initApp = function(){
 			let urls = [];
 			_.forEach(checkedValues, function(value){
 				let siteConfig = config[value];
-				let url = siteConfig.base_url + siteConfig.required_filters.replaceAll("{{contract}}", siteConfig.contract[contract]).replaceAll("{{typology}}", siteConfig.typology[typology]).replaceAll("{{city}}", city); 
+				let url = siteConfig.base_url + siteConfig.required_filters.replaceAll("{{contract}}", siteConfig.contract[contract]).replaceAll("{{typology}}", siteConfig.typology[typology]).replaceAll("{{city}}", city);
 				_.forOwn(filters, function(value, key){
 					if(!_.isEmpty(value)){
 						url += siteConfig.optional_filters[key].replace("{{"+key+"}}", value) + '&';
@@ -116,21 +116,17 @@ var initApp = function(){
 				$('#city')[0].style.border = "1px solid red"
 			}
 		});
-		
-		$("#openSavesearchBtn").click(function(){
-			//TODO: nome dinamico inserito dall'utente
-			$("#savesearchBtn").show();
-			$("#saveSearch").click(function(){
-				var name = $("#savedSearchName").val();
-				if(!_.isEmpty(name)){
-					saveFormModel(name).then(function(){
-						//TODO: alert salvataggio eseguito con successo
-						$("#savesearchBtn").hide();
-						$("#savedSearchName").val('');
-					});
-				}
-			})
-		});
+
+        $("#saveSearch").click(function() {
+            var name = $("#savedSearchName").val();
+            if (!_.isEmpty(name)) {
+                saveFormModel(name).then(function () {
+                    //TODO: alert salvataggio eseguito con successo
+                    $('#saveSearchModal').modal('hide');
+                    $("#savedSearchName").val('');
+                });
+            }
+        });
 
 		//TODO: si posso riunire?
 		$("#city").change(function() {

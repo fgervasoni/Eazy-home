@@ -167,3 +167,10 @@ select{
     background-color: transparent;
     cursor: pointer;
 }
+
+#openSavesearchBtn{
+    cursor: pointer;
+    position: absolute;
+    right: 40px;
+    top: 75px;
+}

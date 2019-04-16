@@ -3,10 +3,26 @@ String.prototype.replaceAll = function (find, replace) {
     return str.replace(new RegExp(find.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'g'), replace);
 };
 
-var saveFormModel = function(){
+var saveFormModel = function(nameSearch){
 	var deferred = Q.defer();
 	try {
-		chrome.storage.sync.set({formModel: 
+		//Salviamo nelle preferenza dell'utente
+		if(nameSearch){
+			chrome.storage.sync.set({ [nameSearch]: 
+				{
+					city : $('#city').val().toLowerCase(),
+					contract : $('#contract').val(),
+					typology : $('#typology').val(),
+					minPrice : $('#minPrice').val(),
+					maxPrice : $('#maxPrice').val(),
+					minArea : $('#minArea').val(),
+					maxArea : $('#maxArea').val()
+				}
+			});
+		}
+		
+		//Salviamo nel form di sessione
+		chrome.storage.sync.set({ 'formModel': 
 			{
 				city : $('#city').val().toLowerCase(),
 				contract : $('#contract').val(),
@@ -24,10 +40,12 @@ var saveFormModel = function(){
 	return deferred.promise;
 }
 
-var loadFormModel = function(){
+var loadFormModel = function(nameSearch){
 	var deferred = Q.defer();
 	try {
-		chrome.storage.sync.get('formModel', function(data) {
+		//Carichiamo dalle preferenza dell'utente oppure il form di sessione
+		var savedName = nameSearch || 'formModel';
+		chrome.storage.sync.get( savedName, function(data) {
             if(data && data.formModel){
                 $('#city').val(data.formModel.city),
                 $('#contract').val(data.formModel.contract),

@@ -117,6 +117,15 @@ var initApp = function(){
 			}
 		});
 		
+		$("#savesearchBtn").click(function(){
+			//TODO: nome dinamico inserito dall'utente
+			saveFormModel("Test");
+		})
+		
+		$("#savedsearch-menu").click(function(){
+			//TODO: nome dinamico dalla lista dei salvataggi dell'utente
+			loadFormModel("Test");
+		})
 
 		//TODO: si posso riunire?
 		$("#city").change(function() {

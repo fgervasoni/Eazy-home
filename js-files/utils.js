@@ -28,7 +28,7 @@ var loadFormModel = function(){
 	var deferred = Q.defer();
 	try {
 		chrome.storage.sync.get('formModel', function(data) {
-            if(data){
+            if(data && data.formModel){
                 $('#city').val(data.formModel.city),
                 $('#contract').val(data.formModel.contract),
                 $('#typology').val(data.formModel.typology),
@@ -37,7 +37,9 @@ var loadFormModel = function(){
                 $('#minArea').val(data.formModel.minArea),
                 $('#maxArea').val(data.formModel.maxArea)
                 deferred.resolve(data.formModel);
-            }
+            } else {
+				deferred.resolve();
+			}
 		});
 	} catch(e){
 		deferred.resolve();

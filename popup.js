@@ -11,8 +11,8 @@ var redrawSiteList = function(config){
 	let checked = true;
 
 	loadFormModel().then(function(model){
-		let contractSelected = model ? model.contract : null;
-		let typologySelected = model ? model.typology : null;
+		let contractSelected = model ? model.contract : "rent";
+		let typologySelected = model ? model.typology : "flat";
 		
 		siteList.empty();
 		_.forOwn(config, function(value, key){

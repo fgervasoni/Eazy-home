@@ -117,15 +117,20 @@ var initApp = function(){
 			}
 		});
 		
-		$("#savesearchBtn").click(function(){
+		$("#openSavesearchBtn").click(function(){
 			//TODO: nome dinamico inserito dall'utente
-			saveFormModel("Test");
-		})
-		
-		$("#savedsearch-menu").click(function(){
-			//TODO: nome dinamico dalla lista dei salvataggi dell'utente
-			loadFormModel("Test");
-		})
+			$("#savesearchBtn").show();
+			$("#saveSearch").click(function(){
+				var name = $("#savedSearchName").val();
+				if(!_.isEmpty(name)){
+					saveFormModel(name).then(function(){
+						//TODO: alert salvataggio eseguito con successo
+						$("#savesearchBtn").hide();
+						$("#savedSearchName").val('');
+					});
+				}
+			})
+		});
 
 		//TODO: si posso riunire?
 		$("#city").change(function() {

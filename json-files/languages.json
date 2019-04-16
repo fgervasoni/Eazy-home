@@ -152,6 +152,15 @@
             "fr": "",
             "es": "",
             "pt": ""
+        },
+		"savedsearch_menu": {
+            "it": "Ricerche Salvate",
+            "uk": "Saved Searches",
+			"en": "Saved Searches",
+            "de": "",
+            "fr": "",
+            "es": "",
+            "pt": ""
         }
     }
 }

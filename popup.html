@@ -5,7 +5,8 @@
 		<link href="https://fonts.googleapis.com/css?family=Heebo" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap4-toggle.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap4-toggle.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 	
 	<header>
@@ -34,14 +35,29 @@
 			<div id="sideNav" class="sidenav light">
 				<a id="closeMenu" class="closebtn">&times;</a>
 				<a id="country-menu" class="menu-item  trn">country</a>
-				<a id="savedsearch-menu" class="menu-item  trn">savedsearch_menu</a>
-
+				<a id="savedsearch-menu" class="menu-item trn">savedsearch_menu</a>
+				<div id="savedsearch-dropdown" class="dropdown" style="display:none">
+					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						Nome Ricerca
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						<!-- <li role="separator" class="divider"></li>
+						<li><a href="#">Separated link</a></li> -->
+					</ul>
+				</div>
 			</div>
 
 			<!--SAVED SEARCH-->
 			<div class="search-saved row">
-				<div id="savesearchBtn" class="trn">save_search</div>
-			<div>
+				<div id="openSavesearchBtn"><i class="material-icons">save</i></div>
+				<div id="savesearchBtn" class="input-group" style="display:none; cursor:pointer">
+					<input id="savedSearchName" type="text" class="form-control" placeholder="Name..">
+					<span class="input-group-btn">
+						<button id="saveSearch" class="btn btn-default trn" type="button">SAVE</button>
+					</span>
+				</div>
+			</div>
 			
 			<!--FILTRI-->
 			<div class="filters">

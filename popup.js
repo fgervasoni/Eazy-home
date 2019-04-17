@@ -73,6 +73,7 @@ var initApp = function(){
 
 		$("#containerFlags").hide();
 		$("#containerSearch").show();
+		$("#openSavesearchBtn").prop( "disabled", true );
 
 		//Draw site list
 		redrawSiteList(config);
@@ -129,8 +130,13 @@ var initApp = function(){
         });
 
 		//TODO: si posso riunire?
-		$("#city").change(function() {
-			saveFormModel();
+		$("#city").on('change textInput input',function(element) {
+			if (element.currentTarget.value !== ""){
+				$("#openSavesearchBtn").prop("disabled", false);
+				saveFormModel();
+			}else{
+				$("#openSavesearchBtn").prop( "disabled", true );
+			}
 		});
 		$("#minPrice").change(function() {
 			saveFormModel();

@@ -5,6 +5,7 @@ var SideMenu = {
 	LanguageButton : $("#language-menu"),
 	CountryButton: $("#country-menu"),
 	SavedSearchesButton: $("#savedsearch-menu"),
+	RemoveSavedSearch: $("#removeSavedSearch"),
 	Open : function(){
 		SideMenu.sideNav[0].style.width = "250px";
 	},
@@ -27,6 +28,12 @@ SideMenu.CountryButton.click(function(element){
 	});
 });
 
+SideMenu.RemoveSavedSearch.click(function(element){
+	chrome.storage.sync.get('savedSearches', function(data) {
+		console.log(element);
+	})
+})
+
 SideMenu.SavedSearchesButton.click(function(){
 
 	$("#savedsearch-dropdown").show();
@@ -35,7 +42,7 @@ SideMenu.SavedSearchesButton.click(function(){
 	chrome.storage.sync.get('savedSearches', function(data) { 
 		if(data && data.savedSearches){
 			_.forOwn(data.savedSearches, function(value, key){
-				dropdown.append('<li id="'+ key +'">'+ key +'</li>'); 
+				dropdown.append('<li id="'+ key +'">'+ key +'<i id="removeSavedSearch" class="material-icons">'+"clear"+'</i>'+'</li>');
 			});
 		}
 

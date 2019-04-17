@@ -188,3 +188,10 @@ select{
 #dropdownMenu:focus{
     box-shadow: unset;
 }
+
+#removeSavedSearch{
+    float:right;
+    font-size: unset;
+    margin-top: 3px;
+    cursor: pointer;
+}

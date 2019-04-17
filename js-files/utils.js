@@ -74,9 +74,11 @@ var deleteFormModel = function(nameSearch){
 			chrome.storage.sync.get('savedSearches', function(data) {
                 delete data.savedSearches[nameSearch];
                 chrome.storage.sync.set({ savedSearches: data.savedSearches });
+				deferred.resolve();
             })
+		} else {
+			deferred.resolve();
 		}
-		deferred.resolve();
 	} catch(e){
 		deferred.reject();
 	}

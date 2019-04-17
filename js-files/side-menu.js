@@ -28,12 +28,6 @@ SideMenu.CountryButton.click(function(element){
 	});
 });
 
-SideMenu.RemoveSavedSearch.click(function(element){
-	chrome.storage.sync.get('savedSearches', function(data) {
-		console.log(element);
-	})
-})
-
 SideMenu.SavedSearchesButton.click(function(){
 
 	$("#savedsearch-dropdown").show();
@@ -51,6 +45,14 @@ SideMenu.SavedSearchesButton.click(function(){
 				SideMenu.Close();
 			});
 		});
+
+        $("#savedsearch-dropdown li i").click(function(element){
+            chrome.storage.sync.get('savedSearches', function(data) {
+                delete data.savedSearches[element.target.parentElement.id];
+                chrome.storage.sync.set({ savedSearches: data.savedSearches });
+            })
+
+        });
 	});
 	
 })

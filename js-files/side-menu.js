@@ -42,7 +42,7 @@ SideMenu.SavedSearchesButton.click(function(){
 	chrome.storage.sync.get('savedSearches', function(data) { 
 		if(data && data.savedSearches){
 			_.forOwn(data.savedSearches, function(value, key){
-				dropdown.append('<li id="'+ key +'">'+ key +'<i id="removeSavedSearch" class="material-icons">'+"clear"+'</i>'+'</li>');
+				dropdown.append('<li class="savedSearch" id="'+ key +'">'+ key +'<i id="removeSavedSearch" class="material-icons">'+"clear"+'</i>'+'</li>');
 			});
 		}
 

@@ -42,6 +42,23 @@ var saveFormModel = function(nameSearch){
 	return deferred.promise;
 }
 
+var deleteFormModel = function(nameSearch){
+	var deferred = Q.defer();
+	try {
+		//Salviamo nelle preferenza dell'utente
+		if(nameSearch){
+			chrome.storage.sync.get('savedSearches', function(data) {
+                delete data.savedSearches[nameSearch];
+                chrome.storage.sync.set({ savedSearches: data.savedSearches });
+            })
+		}
+		deferred.resolve();
+	} catch(e){
+		deferred.reject();
+	}
+	return deferred.promise;
+}
+
 var loadFormModel = function(nameSearch){
 	var deferred = Q.defer();
 	try {
@@ -79,11 +96,6 @@ var loadFormModel = function(nameSearch){
 				}
 			});
 		}
-		
-
-
-
-		savedSearches
 	} catch(e){
 		deferred.resolve();
 	}

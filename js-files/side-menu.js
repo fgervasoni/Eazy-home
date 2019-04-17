@@ -40,18 +40,16 @@ SideMenu.SavedSearchesButton.click(function(){
 			});
 		}
 
-		$("#savedsearch-dropdown li").click(function(element){
+		$("#savedsearch-dropdown li.savedSearch").click(function(element){
 			loadFormModel(element.target.id).then(function(){
 				SideMenu.Close();
 			});
 		});
 
-        $("#savedsearch-dropdown li i").click(function(element){
-            chrome.storage.sync.get('savedSearches', function(data) {
-                delete data.savedSearches[element.target.parentElement.id];
-                chrome.storage.sync.set({ savedSearches: data.savedSearches });
-            })
-
+        $("#savedsearch-dropdown li #removeSavedSearch").click(function(element){
+			deleteFormModel((element.target.parentElement.id)).then(function(){
+				
+			});
         });
 	});
 	

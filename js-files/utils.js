@@ -3,6 +3,28 @@ String.prototype.replaceAll = function (find, replace) {
     return str.replace(new RegExp(find.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'g'), replace);
 };
 
+updateSaveIcon = function(sessionModel){
+	
+	var iconFull = false;
+	
+	chrome.storage.sync.get('savedSearches', function(data) {
+		data.savedSearches = data.savedSearches || {};
+		_.forOwn(data.savedSearches, function(value, key){
+			if(_.isEqual(sessionModel, value)){
+				iconFull = true;
+				$("#saveSearchModal #savedSearchName").val(key);
+			}
+		})
+		
+		if(iconFull) {
+			$("#openSavesearchBtn").empty().append('<i class="material-icons">star</i>');
+		} else {
+			$("#openSavesearchBtn").empty().append('<i class="material-icons">star_border</i>');
+		}
+	});	
+}
+	
+
 var saveFormModel = function(nameSearch){
 	var deferred = Q.defer();
 	try {
@@ -24,8 +46,7 @@ var saveFormModel = function(nameSearch){
 		}
 		
 		//Salviamo nel form di sessione
-		chrome.storage.sync.set({ 'formModel': 
-			{
+		var formSession = {
 				city : $('#city').val().toLowerCase(),
 				contract : $('#contract').val(),
 				typology : $('#typology').val(),
@@ -34,7 +55,10 @@ var saveFormModel = function(nameSearch){
 				minArea : $('#minArea').val(),
 				maxArea : $('#maxArea').val()
 			}
-		});
+		chrome.storage.sync.set({ 'formModel': formSession});
+		
+		updateSaveIcon(formSession);
+		
 		deferred.resolve();
 	} catch(e){
 		deferred.reject();

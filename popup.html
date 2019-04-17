@@ -50,27 +50,27 @@
 
 			<!--SAVED SEARCH MODAL-->
 			<div class="modal fade" id="saveSearchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-					<div class="modal-dialog" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalLabel">Salva ricerca</h5>
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<div class="modal-body">
-								<label for="savedSearchName">Nome ricerca</label>
-								<input id="savedSearchName" type="text" class="form-control" placeholder="Inserisci qui...">
-								<span class="input-group-btn">
-								</span>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
-								<button id="saveSearch" type="button" class="btn btn-primary">Salva</button>
-							</div>
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Salva ricerca</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<label for="savedSearchName">Nome ricerca</label>
+							<input id="savedSearchName" type="text" class="form-control" placeholder="Inserisci qui...">
+							<span class="input-group-btn">
+							</span>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+							<button id="saveSearch" type="button" class="btn btn-primary">Salva</button>
 						</div>
 					</div>
 				</div>
+			</div>
 
 			<!--FILTRI-->
 			<div class="filters">
@@ -79,7 +79,9 @@
 						<label class="trn" for="city">city</label>
 						<input id="city" type="text" class="form-control city" placeholder="City">
 					</div>
-					<button id="openSavesearchBtn" data-toggle="modal" data-target="#saveSearchModal"><i class="material-icons">save</i></button>
+					<button id="openSavesearchBtn" data-toggle="modal" data-target="#saveSearchModal">
+						<i class="material-icons">star</i>
+					</button>
 				</div>
 				<div class="row">
 					<div class="col-xs-6 center">

@@ -196,9 +196,12 @@ select{
     cursor: pointer;
 }
 
+.savedSearch{
+    padding-left: 5px;
+}
+
 .savedSearch:hover{
     cursor: pointer;
     background-color: #4c4c4c4f;
     border-radius: 4px;
-    padding-left: 5px;
 }

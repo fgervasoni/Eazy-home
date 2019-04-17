@@ -83,6 +83,17 @@ var deleteFormModel = function(nameSearch){
 	return deferred.promise;
 }
 
+var redrawDropdown = function(dropdown){
+    dropdown.empty();
+    chrome.storage.sync.get('savedSearches', function(data) {
+        if (data && data.savedSearches) {
+            _.forOwn(data.savedSearches, function (value, key) {
+                dropdown.append('<li class="savedSearch" id="' + key + '">' + key + '<i id="removeSavedSearch" class="material-icons">' + "clear" + '</i>' + '</li>');
+            });
+        }
+    })
+}
+
 var loadFormModel = function(nameSearch){
 	var deferred = Q.defer();
 	try {

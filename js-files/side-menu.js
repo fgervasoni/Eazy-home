@@ -47,9 +47,9 @@ SideMenu.SavedSearchesButton.click(function(){
 		});
 
         $("#savedsearch-dropdown li #removeSavedSearch").click(function(element){
-			event.stopPropagation() 
+			event.stopPropagation() ;
 			deleteFormModel((element.target.parentElement.id)).then(function(){
-				//TODO: redraw della lista
+                redrawDropdown(dropdown);
 			});
         });
 	});

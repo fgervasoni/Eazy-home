@@ -34,6 +34,11 @@ var Language = {
 				var translator = $('body').translate({lang: language, t: languagesConfig.dictionary});
 				$("#containerFlags").hide();
 				$("#containerSearch").show();
+
+				//WORKAROUND for first country selection
+                $("#selectCountry").show();
+                $("#firstSelectCountry").hide();
+
 				deferred.resolve();
 			}, function(error){
 				console.error(error)

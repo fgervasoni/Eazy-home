@@ -5,7 +5,6 @@ let search =  $("#search");
 let siteList =  $("#site-list");
 let browserLang = navigator.language ? navigator.language.split("-")[0] : ( navigator.userLanguage ? navigator.userLanguage.split("-")[0] : "en");
 
-
 var redrawSiteList = function(config){
 	let disabled = false;
 	let checked = true;
@@ -43,6 +42,10 @@ var redrawSiteList = function(config){
 $(function () {
 	$('[data-toggle="tooltip"]').tooltip();
 	Theme.init();
+
+    //WORKAROUND for first country selection
+    $("#selectCountry").hide();
+    $("#firstSelectCountry").show();
 
 	$.getJSON('json-files/config.json', function(data) {
 		globalConfig = data;

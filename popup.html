@@ -24,7 +24,8 @@
 
 		<!--CHOOSE COUNTRY-->
 		<div id="containerFlags" class="container">
-			<h5 style="text-align: center" class="trn">select_country</h5>
+			<h5 id="selectCountry" style="text-align: center" class="trn">select_country</h5>
+            <h5 id="firstSelectCountry" style="text-align: center">Select Country</h5>
 			<div id="flags-list" class="center"></div>
 		</div>
 
@@ -113,11 +114,11 @@
 				<div class="row">
 					<div class="col-xs-6 center">
 						<label class="trn" for="minArea">minArea</label>
-						<input id="minArea" type="number" class="form-control" step="10" min="0" placeholder="Square meters (m²)">
+						<input id="minArea" type="number" class="form-control" step="10" min="0">
 					</div>
 					<div class="col-xs-6 center">
 						<label class="trn" for="maxArea">maxArea</label>
-						<input id="maxArea" type="number" class="form-control" step="10" min="0" placeholder="Square meters (m²)">
+						<input id="maxArea" type="number" class="form-control" step="10" min="0">
 					</div>
 				</div>
 			</div>

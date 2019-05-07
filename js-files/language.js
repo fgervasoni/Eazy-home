@@ -34,6 +34,18 @@ var Language = {
 				var translator = $('body').translate({lang: language, t: languagesConfig.dictionary});
 				$("#containerFlags").hide();
 				$("#containerSearch").show();
+
+				//WORKAROUND for first country selection
+                $("#selectCountry").show();
+                $("#firstSelectCountry").hide();
+
+                $("#city").prop("placeholder", languagesConfig.dictionary.defaultCity[language]);
+                /*TODO sistemare
+                $("#minPrice").prop("placeholder",flagsConfig[language].currency);
+                $("#maxPrice").prop("placeholder",flagsConfig[language].currency);*/
+                $("#minArea").prop("placeholder", languagesConfig.dictionary.measurement[language]);
+                $("#maxArea").prop("placeholder", languagesConfig.dictionary.measurement[language]);
+
 				deferred.resolve();
 			}, function(error){
 				console.error(error)

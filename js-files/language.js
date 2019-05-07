@@ -39,6 +39,13 @@ var Language = {
                 $("#selectCountry").show();
                 $("#firstSelectCountry").hide();
 
+                $("#city").prop("placeholder", languagesConfig.dictionary.defaultCity[language]);
+                /*TODO sistemare
+                $("#minPrice").prop("placeholder",flagsConfig[language].currency);
+                $("#maxPrice").prop("placeholder",flagsConfig[language].currency);*/
+                $("#minArea").prop("placeholder", languagesConfig.dictionary.measurement[language]);
+                $("#maxArea").prop("placeholder", languagesConfig.dictionary.measurement[language]);
+
 				deferred.resolve();
 			}, function(error){
 				console.error(error)

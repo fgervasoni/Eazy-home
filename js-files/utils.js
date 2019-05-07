@@ -42,6 +42,7 @@ var saveFormModel = function(nameSearch){
 					maxArea : $('#maxArea').val()
 				}
 				chrome.storage.sync.set({ savedSearches: data.savedSearches });
+				updateSaveIcon(data.savedSearches[nameSearch]);
 			});
 		}
 		

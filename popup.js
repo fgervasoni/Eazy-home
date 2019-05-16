@@ -76,7 +76,7 @@ var initApp = function(){
 
 		$("#containerFlags").hide();
 		$("#containerSearch").show();
-		$("#openSavesearchBtn").prop( "disabled", true );
+		$("#openSavesearchBtn").hide();
 
 		//Draw site list
 		redrawSiteList(config);
@@ -135,10 +135,10 @@ var initApp = function(){
 		//TODO: si posso riunire?
 		$("#city").on('change textInput input',function(element) {
 			if (element.currentTarget.value !== ""){
-				$("#openSavesearchBtn").prop("disabled", false);
+				$("#openSavesearchBtn").show();
 				saveFormModel();
 			}else{
-				$("#openSavesearchBtn").prop( "disabled", true );
+				$("#openSavesearchBtn").hide();
 			}
 		});
 		$("#minPrice").change(function() {

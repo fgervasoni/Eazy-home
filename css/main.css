@@ -33,14 +33,19 @@ body {
     color: #FAFAFA !important;
 }
 
+.theme {
+	float: right; 
+	cursor:pointer;
+	color: grey;
+}
+
 #titleDiv{
     text-align: center;
     font-size: 16px;
-    /* line-height: 40px; */
     padding: 10px;
     margin: -10px -10px 0 -10px;
     transition: 500ms;
-    box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+    border-bottom: 1px solid #dee2e6;
 }
 
 .icon{

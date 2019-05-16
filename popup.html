@@ -11,12 +11,12 @@
 	
 	<header>
 		<!--TITOLO-->
-        <div id="titleDiv" class="dark">
+        <div id="titleDiv" class="light">
             <span id="menu" style="float: left; cursor:pointer">&#9776;</span>
 			<img src="images/logo/logo.png" style="width: 25px; margin-top: -4px;">
             <span id="title">Eazy Home</span>
-            <span class="theme" id="themeLight" style="float: right; cursor:pointer;display: none">&#9790;</span>
-            <span class="theme" id="themeBlack" style="float: right; cursor:pointer;" >&#9728;</span>
+            <span class="theme" id="themeLight" style="display: none">&#9790;</span>
+            <span class="theme" id="themeBlack" >&#9728;</span>
         </div>
 	</header>
 
@@ -36,10 +36,10 @@
 			<div id="sideNav" class="sidenav light">
 				<a id="closeMenu" class="closebtn">&times;</a>
 				<a id="country-menu" class="menu-item trn">country</a>
-				<a id="savedsearch-menu" class="menu-item trn">savedsearch_menu</a>
-				<div id="savedsearch-dropdown" class="dropdown" style="display:none; margin-left: 32px">
+				<!-- <a id="savedsearch-menu" class="menu-item trn">savedsearch_menu</a> -->
+				<div id="savedsearch-dropdown" class="dropdown" style="margin-left: 32px">
 					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-						Nome Ricerca
+						<span class="trn">savedsearch_menu</span>
 						<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="dropdownMenu">
@@ -149,6 +149,7 @@
 		<script src="js-files/language.js"></script>
 		<script src="js-files/side-menu.js"></script>
 		<script src="js-files/theme.js"></script>
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script> -->
 		<script src="popup.js"></script>
     </body>
 </html>

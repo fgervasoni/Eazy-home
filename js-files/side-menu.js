@@ -4,7 +4,7 @@ var SideMenu = {
 	closeBtn :  $("#closeMenu"),
 	LanguageButton : $("#language-menu"),
 	CountryButton: $("#country-menu"),
-	SavedSearchesButton: $("#savedsearch-menu"),
+	SavedSearchesButton: $("#savedsearch-dropdown"),
 	RemoveSavedSearch: $("#removeSavedSearch"),
 	Open : function(){
 		SideMenu.sideNav[0].style.width = "250px";

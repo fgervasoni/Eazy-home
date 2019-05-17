@@ -3,6 +3,9 @@ let config = {};
 let titleDiv = $("#titleDiv");
 let search =  $("#search");
 let siteList =  $("#site-list");
+let themeLight = $("#themeLight");
+let themeBlack = $("#themeBlack");
+let savedSearchSelect =  $(".savedSearchSelect");
 let browserLang = navigator.language ? navigator.language.split("-")[0] : ( navigator.userLanguage ? navigator.userLanguage.split("-")[0] : "en");
 
 var redrawSiteList = function(config){

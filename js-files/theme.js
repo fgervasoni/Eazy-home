@@ -5,8 +5,8 @@ var Theme = {
 		Theme.icon.click(function(element){
 		
 			//Icona navbar
-			$("#themeBlack").toggle();
-			$("#themeLight").toggle();
+			$(themeBlack).toggle();
+			$(themeLight).toggle();
 
 			//Cambio tema body
 			$(document.body).toggleClass('light');
@@ -19,13 +19,17 @@ var Theme = {
 			//Cambio tema sidebar
 			$(sideNav).toggleClass('light');
 			$(sideNav).toggleClass('dark');
-			
+
+            //Trick cambio colore select ricerche salvate
+            if($(themeBlack)[0].style.display === 'none') $(savedSearchSelect).css({"color": "#FAFAFA", "transition" : "500ms"});
+            else $(savedSearchSelect).css({"color": "#4a4c4f", "transition" : "500ms"});
+
 			chrome.storage.sync.set({'theme': element.target.id});
 		});
 	},
 	init : function(){
 		chrome.storage.sync.get('theme', function(data) {
-			if(data.theme == "themeBlack") {
+			if(data.theme === "themeBlack") {
 				$("#themeBlack").hide();
 				$("#themeLight").show();	
 				//Cambio tema body
@@ -39,6 +43,10 @@ var Theme = {
 				//Cambio tema sidebar
 				$(sideNav).removeClass('light');
 				$(sideNav).addClass('dark');
+
+				//Trick cambio colore select ricerche salvate
+                if($(themeBlack)[0].style.display === 'none') $(savedSearchSelect).css({"color": "#FAFAFA", "transition" : "500ms"});
+                else $(savedSearchSelect).css({"color": "#4a4c4f", "transition" : "500ms"});
 			}
 			Theme.addClickListener();
 		});

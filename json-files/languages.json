@@ -10,13 +10,13 @@
             "pt": ""
         },
         "defaultCity": {
-            "it": "Roma",
-            "uk": "London",
-            "en": "London",
-            "de": "Berlin",
-            "fr": "Paris",
-            "es": "Madrid",
-            "pt": "Lisboa"
+            "it": "Roma...",
+            "uk": "London...",
+            "en": "London...",
+            "de": "Berlin...",
+            "fr": "Paris...",
+            "es": "Madrid...",
+            "pt": "Lisboa..."
         },
         "contract": {
             "it": "Contratto",

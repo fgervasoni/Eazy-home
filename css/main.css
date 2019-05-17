@@ -26,7 +26,7 @@ body {
 /*Theme*/
 .light{
     background-color: #FAFAFA !important;
-    color: #212121 !important;
+    color: #4a4c4f !important;
 }
 .dark{
     background-color: #4a4c4f !important;
@@ -34,9 +34,8 @@ body {
 }
 
 .theme {
-	float: right; 
+	float: right;
 	cursor:pointer;
-	color: grey;
 }
 
 #titleDiv{
@@ -134,7 +133,7 @@ select{
 }
 
 #site-list .switch.btn {
-    margin-right: 20px;
+    /* margin-right: 20px; */
 }
 
 #site-list .switch-on {

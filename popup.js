@@ -13,10 +13,17 @@ var redrawSiteList = function(config){
 		let contractSelected = model ? model.contract : "rent";
 		let typologySelected = model ? model.typology : "flat";
 
-		siteList.empty();
+        $("#contract").change(function() {
+            $("#contract")[0].value === "rent" ? $("#minPrice").prop("step", 50) : $("#minPrice").prop("step", 5000);
+            $("#contract")[0].value === "rent" ? $("#maxPrice").prop("step", 50) : $("#maxPrice").prop("step", 5000);
+        });
+
+        siteList.empty();
+
 		_.forOwn(config, function(value, key){
-			//Check site to disable
-			if(!config[key].contract[contractSelected] || !config[key].typology[typologySelected]) {
+
+            //Check site to disable
+            if(!config[key].contract[contractSelected] || !config[key].typology[typologySelected]) {
 				disabled = true;
 				checked = false;
 			} else {

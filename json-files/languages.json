@@ -197,6 +197,42 @@
             "fr": "",
             "es": "",
             "pt": ""
+        },
+        "save_search": {
+            "it": "Salva ricerca",
+            "uk": "Save search",
+			"en": "Save search",
+            "de": "",
+            "fr": "",
+            "es": "",
+            "pt": ""
+        },
+        "search_name": {
+            "it": "Nome ricerca",
+            "uk": "Search name",
+			"en": "Search name",
+            "de": "",
+            "fr": "",
+            "es": "",
+            "pt": ""
+        },
+        "save": {
+            "it": "Salva",
+            "uk": "Save",
+			"en": "Save",
+            "de": "",
+            "fr": "",
+            "es": "",
+            "pt": ""
+        },
+        "close": {
+            "it": "Chiudi",
+            "uk": "Close",
+			"en": "Close",
+            "de": "",
+            "fr": "",
+            "es": "",
+            "pt": ""
         }
     }
 }

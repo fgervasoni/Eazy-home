@@ -91,6 +91,16 @@ var initApp = function(){
 		//Draw site list
 		redrawSiteList(config);
 
+		//ABOUT PAGE
+        $("#about").click(function(){
+            chrome.tabs.create({url: 'https://eazy-home.com/about'})
+        });
+
+        //FEEDBACK PAGE
+        $("#about").click(function(){
+            chrome.tabs.create({url: 'https://eazy-home.com/feedback'})
+        });
+
 		//Bind click ricerca
 		search.click(function(element) {
 			let city = $('#city').val().toLowerCase();

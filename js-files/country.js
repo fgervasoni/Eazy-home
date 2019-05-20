@@ -9,7 +9,10 @@ var Country = {
 			if(Country.flagsList.is(':empty')){
 				$.getJSON('../json-files/flags.json', function(flags) {
 					_.forOwn(flags, function(value){
-						Country.flagsList.append('<img id="'+value.code+'" class="flag" src="'+value.image+'">');			
+					    if(value.disable)
+                            Country.flagsList.append('<img style="opacity: 0.2; cursor: not-allowed; pointer-events: none" id="'+value.code+'" class="flag" src="'+value.image+'"><span style="margin-left: -100px; font-family: cursive; font-size: 16px; margin-right: 16px">Coming Soon</span>');
+                        else
+						    Country.flagsList.append('<img id="'+value.code+'" class="flag" src="'+value.image+'">');
 					});
 					Country.addClickListener(deferred);
 				});

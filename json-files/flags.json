@@ -4,41 +4,47 @@
 		"language" : "Italiano",
 		"image": "images/flags/italy.png",
 		"code": "it",
-		"currency": "EUR (€)"
+		"currency": "EUR (€)",
+        "disable": false
 	},
 	"unitedKingdom": {
 		"name" : "United Kingdom",
 		"language" : "English",
 		"image": "images/flags/united-kingdom.png",
 		"code": "uk",
-		"currency": "GBP (£)"
+		"currency": "GBP (£)",
+        "disable": true
 	},
 	"germany": {
 		"name" : "Deutschland",
 		"language" : "Deutsch",
 		"image": "images/flags/germany.png",
 		"code": "de",
-		"currency": "EUR (€)"
+		"currency": "EUR (€)",
+        "disable": true
 	},
 	"france": {
 		"name" : "France",
 		"language" : "Français",
 		"image": "images/flags/france.png",
 		"code": "fr",
-		"currency": "EUR (€)"
+		"currency": "EUR (€)",
+        "disable": true
 	},
 	"spain": {
 		"name" : "España",
 		"language" : "Español",
 		"image": "images/flags/spain.png",
 		"code": "es",
-		"currency": "EUR (€)"
+		"currency": "EUR (€)",
+        "disable": true
 	},
 	"portugal": {
 		"name" : "Portugal",
 		"language" : "Português",
 		"image": "images/flags/portugal.png",
 		"code": "pt",
-		"currency": "EUR (€)"
+		"currency": "EUR (€)",
+        "disable": true
 	}
 }

@@ -97,7 +97,7 @@ var initApp = function(){
         });
 
         //FEEDBACK PAGE
-        $("#about").click(function(){
+        $("#feedback").click(function(){
             chrome.tabs.create({url: 'https://eazy-home.com/feedback'})
         });
 

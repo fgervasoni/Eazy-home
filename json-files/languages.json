@@ -170,6 +170,24 @@
             "fr": "",
             "es": "",
             "pt": ""
+        },
+		"feedback": {
+            "it": "Segnalazioni",
+            "uk": "Feedback",
+			"en": "Feedback",
+            "de": "",
+            "fr": "",
+            "es": "",
+            "pt": ""
+        },
+		"about": {
+            "it": "Di noi",
+            "uk": "About",
+			"en": "About",
+            "de": "",
+            "fr": "",
+            "es": "",
+            "pt": ""
         }
     }
 }

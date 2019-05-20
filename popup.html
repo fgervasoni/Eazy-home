@@ -15,7 +15,7 @@
             <span id="menu" style="float: left; cursor:pointer">&#9776;</span>
 			<img src="images/logo/logo.png" style="width: 25px;margin-top: -4px;border: 2px solid lightgrey;border-radius: 7px;">
             <span id="title">Eazy Home</span>
-            <span class="theme" id="themeLight" style="display: none">&#9790;</span>
+            <span class="theme" id="themeLight" style="display: none; margin-left: 1.5px;">&#9790;</span>
             <span class="theme" id="themeBlack" >&#9728;</span>
         </div>
 	</header>
@@ -37,9 +37,9 @@
 				<a id="closeMenu" class="closebtn">&times;</a>
 				<a id="country-menu" class="menu-item trn">country</a>
 				<!-- <a id="savedsearch-menu" class="menu-item trn">savedsearch_menu</a> -->
-				<div id="savedsearch-dropdown" class="dropdown" style="margin-left: 32px">
+				<div id="savedsearch-dropdown" class="dropdown" style="margin-left: 20px">
 					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-						<span class="savedSearchSelect trn">savedsearch_menu</span>
+						<span style="font-size: 20px; color: #4a4c4f" class="savedSearchSelect trn">savedsearch_menu</span>
 						<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="dropdownMenu">
@@ -47,7 +47,9 @@
 						<li><a href="#">Separated link</a></li> -->
 					</ul>
 				</div>
-			</div>
+                <a id="feedback" class="menu-item trn">feedback</a>
+                <a id="about" class="menu-item trn">about</a>
+            </div>
 
 			<!--SAVED SEARCH MODAL-->
 			<div class="modal fade" id="saveSearchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -131,7 +133,7 @@
 			<!--CERCA-->
 			<div class="row" style="text-align: center">
 				<div class="col-xs-12 center">
-					<button id="search" type="button" class="btn btn-primary trn">search</button>
+					<button id="search" type="button" style="background-color: #04549c; border-color: #04549c" class="btn btn-primary trn">search</button>
 				</div>
 			</div>
 

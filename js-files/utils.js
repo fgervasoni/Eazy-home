@@ -149,3 +149,8 @@ $("#about").click(function(){
 $("#feedback").click(function(){
     chrome.tabs.create({url: 'https://eazy-home.com/feedback'})
 });
+
+//OFFERS PAGE
+$("#offers").click(function(){
+    chrome.tabs.create({url: 'https://eazy-home.com/offers'})
+});

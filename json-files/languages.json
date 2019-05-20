@@ -188,6 +188,15 @@
             "fr": "",
             "es": "",
             "pt": ""
+        },
+        "offers": {
+            "it": "Offrici un caffè",
+            "uk": "Offers",
+			"en": "Offers",
+            "de": "",
+            "fr": "",
+            "es": "",
+            "pt": ""
         }
     }
 }

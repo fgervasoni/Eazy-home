@@ -6,6 +6,8 @@ let siteList =  $("#site-list");
 let themeLight = $("#themeLight");
 let themeBlack = $("#themeBlack");
 let savedSearchSelect =  $(".savedSearchSelect");
+let minPrice = $("#minPrice");
+let maxPrice = $("#maxPrice");
 let browserLang = navigator.language ? navigator.language.split("-")[0] : ( navigator.userLanguage ? navigator.userLanguage.split("-")[0] : "en");
 
 var redrawSiteList = function(config){
@@ -15,11 +17,6 @@ var redrawSiteList = function(config){
 	loadFormModel().then(function(model){
 		let contractSelected = model ? model.contract : "rent";
 		let typologySelected = model ? model.typology : "flat";
-
-        $("#contract").change(function() {
-            $("#contract")[0].value === "rent" ? $("#minPrice").prop("step", 50) : $("#minPrice").prop("step", 5000);
-            $("#contract")[0].value === "rent" ? $("#maxPrice").prop("step", 50) : $("#maxPrice").prop("step", 5000);
-        });
 
         siteList.empty();
 
@@ -45,8 +42,7 @@ var redrawSiteList = function(config){
 			}
 		});
 	})
-
-}
+};
 
 //INIT FUNCTION
 $(function () {
@@ -97,8 +93,8 @@ var initApp = function(){
 			let contract = $('#contract').val();
 			let typology = $('#typology').val();
 			let filters = {
-				minPrice : $('#minPrice').val(),
-				maxPrice : $('#maxPrice').val(),
+				minPrice : $(minPrice).val(),
+				maxPrice : $(maxPrice).val(),
 				minArea : $('#minArea').val(),
 				maxArea : $('#maxArea').val()
 			};
@@ -151,10 +147,10 @@ var initApp = function(){
 				$("#openSavesearchBtn").hide();
 			}
 		});
-		$("#minPrice").change(function() {
+		$(minPrice).change(function() {
 			saveFormModel();
 		});
-		$("#maxPrice").change(function() {
+		$(maxPrice).change(function() {
 			saveFormModel();
 		});
 		$("#minArea").change(function() {
@@ -165,6 +161,10 @@ var initApp = function(){
 		});
 
 		$("#contract").change(function() {
+            $(minPrice)[0].value = null;
+            $(maxPrice)[0].value = null;
+            $("#contract")[0].value === "rent" ? $(minPrice).prop("step", 50) : $(minPrice).prop("step", 5000);
+            $("#contract")[0].value === "rent" ? $(maxPrice).prop("step", 50) : $(maxPrice).prop("step", 5000);
 			saveFormModel().then(function(){
 				redrawSiteList(config);
 			})
@@ -176,4 +176,4 @@ var initApp = function(){
 			})
 		});
 	});
-}
+};

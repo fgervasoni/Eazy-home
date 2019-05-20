@@ -139,3 +139,13 @@ var loadFormModel = function(nameSearch){
 	}
 	return deferred.promise;
 }
+
+//ABOUT PAGE
+$("#about").click(function(){
+    chrome.tabs.create({url: 'https://eazy-home.com/about'})
+});
+
+//FEEDBACK PAGE
+$("#feedback").click(function(){
+    chrome.tabs.create({url: 'https://eazy-home.com/feedback'})
+});

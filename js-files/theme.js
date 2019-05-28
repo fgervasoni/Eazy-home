@@ -12,6 +12,9 @@ var Theme = {
 			$(document.body).toggleClass('light');
 			$(document.body).toggleClass('dark');
 
+            $("#modalCustom").toggleClass('light');
+            $("#modalCustom").toggleClass('dark');
+
 			//Cambio tema sidebar
 			$(sideNav).toggleClass('light');
 			$(sideNav).toggleClass('dark');
@@ -31,6 +34,9 @@ var Theme = {
 				//Cambio tema body
 				$(document.body).removeClass('light');
 				$(document.body).addClass('dark');
+
+                $("#modalCustom").toggleClass('light');
+                $("#modalCustom").toggleClass('dark');
 
 				//Cambio tema sidebar
 				$(sideNav).removeClass('light');

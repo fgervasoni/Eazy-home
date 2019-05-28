@@ -142,15 +142,15 @@ var loadFormModel = function(nameSearch){
 
 //ABOUT PAGE
 $("#about").click(function(){
-    chrome.tabs.create({url: 'https://eazy-home.com/about'})
+    chrome.tabs.create({url: 'https://eazy-home.com/#about'})
 });
 
 //FEEDBACK PAGE
 $("#feedback").click(function(){
-    chrome.tabs.create({url: 'https://eazy-home.com/feedback'})
+    chrome.tabs.create({url: 'https://eazy-home.com/#feedback'})
 });
 
 //OFFERS PAGE
 $("#offers").click(function(){
-    chrome.tabs.create({url: 'https://eazy-home.com/offers'})
+    chrome.tabs.create({url: 'https://eazy-home.com/#offers'})
 });

@@ -1,7 +1,7 @@
 {
-	"name": "Getting Started Example",
+	"name": "Eazy Home",
 	"version": "1.0",
-	"description": "Build an Extension!",
+	"description": "Extension for looking for home",
 	"permissions": ["declarativeContent", "activeTab", "storage"],
 	"background": {
 	  "scripts": ["background.js"],

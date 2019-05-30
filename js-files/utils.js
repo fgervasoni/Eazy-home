@@ -140,6 +140,19 @@ var loadFormModel = function(nameSearch){
 	return deferred.promise;
 }
 
+var parserFunctions = {
+	idealistaParser : function(url){
+		url = url ? url : "";
+		url = url.replace("prezzo", "con-prezzo");
+		return url
+	},
+	kijijiParser : function(url){
+		url = url ? url : "";
+		//TODO mq
+		return url
+	}
+}
+
 //ABOUT PAGE
 $("#about").click(function(){
     chrome.tabs.create({url: 'https://eazy-home.com/about'})

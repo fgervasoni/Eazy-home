@@ -107,13 +107,22 @@ var initApp = function(){
 			_.forEach(checkedValues, function(value){
 				let siteConfig = config[value];
 				let url = siteConfig.base_url + siteConfig.required_filters.replaceAll("{{contract}}", siteConfig.contract[contract]).replaceAll("{{typology}}", siteConfig.typology[typology]).replaceAll("{{city}}", city);
-				_.forOwn(filters, function(value, key){
+				_.forOwn(filters, (value, key) => {
 					if(!_.isEmpty(value)){
-						url += siteConfig.optional_filters[key].replace("{{"+key+"}}", value) + '&';
+						var fieldKey;
+						for(var prop in siteConfig.optional_filters) { if(_.startsWith(prop, key)) fieldKey = prop;}
+						if(fieldKey){
+							fieldKey.split(',').forEach(function(subKey){
+								siteConfig.optional_filters[fieldKey] = siteConfig.optional_filters[fieldKey].replace("{{"+subKey+"}}", filters[subKey]);
+							});
+							siteConfig.optional_filters[fieldKey] = siteConfig.optional_filters[fieldKey].replace(/{{[0-9a-zA-Z]+}}/g, ""); //remove all empty placeholder
+							url += siteConfig.optional_filters[fieldKey] + siteConfig.optional_filters.separator;
+						}
 					}
 				});
 				if(siteConfig.end_url) url += siteConfig.end_url;
-				if(url[url.length-1] == '&') url = url.slice(0, -1);
+				if(url[url.length-1] == siteConfig.optional_filters.separator) url = url.slice(0, -1);
+				if(siteConfig.parserFunctionName) url = parserFunctions[siteConfig.parserFunctionName](url);
 				urls.push(url);
 			});
 

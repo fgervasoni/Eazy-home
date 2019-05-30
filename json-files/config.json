@@ -40,13 +40,14 @@
 				"room": "stanze"
 			},
 			"optional_filters": {
-				"minPrice": "con-prezzo-min_{{minPrice}}",
-				"maxPrice": "con-prezzo_{{maxPrice}}",
+				"minPrice": "prezzo-min_{{minPrice}}",
+				"maxPrice": "prezzo_{{maxPrice}}",
 				"minArea": "dimensione_{{minArea}}",
 				"maxArea": "dimensione-max_{{maxArea}}",
 				"separator": ","
 			},
-			"end_url": "/?ordine=pubblicazione-desc"
+			"end_url": "/?ordine=pubblicazione-desc",
+			"parserFunctionName": "idealistaParser"
 		},
 		"casa": {
 			"name": "Casa.it",
@@ -71,6 +72,30 @@
 				"separator": "&"
 			},
 			"end_url": "&sortType=date_desc"
+		},
+		"kijiji": {
+			"name": "Casa.it",
+			"icon": "images/kijiji.jpg",
+			"icon_off": "images/kijiji_off.jpg",
+			"base_url": "https://www.kijiji.it",
+			"required_filters": "/case/{{contract}}/annunci-{{city}}/{{typology}}",
+			"contract" : {
+				"rent": "affitto",
+				"sell": "vendita"
+			},		
+			"typology" : {
+				"all": "",
+				"house": "ville-singole-o-a-schiera/",
+				"flat": "appartamento/"
+			},
+			"optional_filters": {
+				"minPrice,maxPrice": "prezzo-{{minPrice}}-{{maxPrice}}",
+				"minArea": "metri-quadri20:{{minArea}}",
+				"maxArea": "metri-quadri21:{{maxArea}}",
+				"separator": "/"
+			},
+			"end_url": "",
+			"parserFunctionName": "kijijiParser"
 		},
 		"mioaffitto": {
 			"name": "Mio Affitto",

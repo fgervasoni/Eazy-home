@@ -157,7 +157,6 @@ var parserFunctions = {
 			}
 			return token;
 		})
-		// https://www.kijiji.it/case/vendita/annunci-milano/ville-singole-o-a-schiera/metri-quadri20:1/metri-quadri21:2/prezzo--543/
 		return tokens.join('/')
 	}
 }

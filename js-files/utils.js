@@ -148,8 +148,17 @@ var parserFunctions = {
 	},
 	kijijiParser : function(url){
 		url = url ? url : "";
-		//TODO mq
-		return url
+		var tokens = url.split("/");
+		tokens = _.map(tokens, (token) => {
+			if(_.includes(token, "metri-quadri2")) {
+				var subTokens = token.split(":");
+				subTokens[1] = Math.round(parseInt(subTokens[1], 10) / 20);
+				token = subTokens.join(':');
+			}
+			return token;
+		})
+		// https://www.kijiji.it/case/vendita/annunci-milano/ville-singole-o-a-schiera/metri-quadri20:1/metri-quadri21:2/prezzo--543/
+		return tokens.join('/')
 	}
 }
 

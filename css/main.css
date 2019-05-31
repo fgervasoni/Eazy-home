@@ -49,7 +49,6 @@ body {
 
 .icon{
     height: 20px;
-    padding: 0 10px 2px 0;
 }
 
 .searchClass{
@@ -132,10 +131,6 @@ select{
     display: none;
 }
 
-#site-list .switch.btn {
-    /* margin-right: 20px; */
-}
-
 #site-list .switch-on {
     right: unset;
 }
@@ -144,22 +139,17 @@ select{
     left: unset;
 }
 
-#site-list .switch-off.btn {
-    padding-left: 0;
-}
-
 #site-list .switch-on.btn {
-    padding-right: 0;
+    left: 9px;
 }
 
 #site-list .btn-outline-primary{
     border-color: transparent;
-    padding: 5px 15px;
 }
 
 #site-list .btn-outline-secondary{
     border-color: transparent;
-    padding: 5px 5px;
+    /* width: 52px; */
 }
 
 #site-list  .btn-outline-primary:hover {

@@ -28,7 +28,7 @@ var redrawSiteList = function(config){
 				checked = false;
 			} else {
 				siteList.append('' +
-					'<span class="searchBtn">'+
+					'<span class="searchBtn" style="margin-left:10px">'+
 					  '<label class="checkbox-inline">'+
 						'<input type="checkbox" data-onstyle="outline-primary" data-offstyle="outline-secondary" ' +
 						'data-onlabel="<img data-toggle=\'tooltip\' data-placement=\'top\' title=\'' + key +'\' src=\''+ value.icon +'\' class=\'icon\'>" '+

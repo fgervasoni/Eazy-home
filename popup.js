@@ -32,7 +32,7 @@ var redrawSiteList = function(config){
 					  '<label class="checkbox-inline">'+
 						'<input type="checkbox" data-onstyle="outline-primary" data-offstyle="outline-secondary" ' +
 						'data-onlabel="<img data-toggle=\'tooltip\' data-placement=\'top\' title=\'' + key +'\' src=\''+ value.icon +'\' class=\'icon\'>" '+
-						'data-offlabel="<img data-toggle=\'tooltip\' data-placement=\'top\' title=\'' + key +'\' src=\''+ value.icon_off +'\' class=\'icon\'>" ' +
+						'data-offlabel="<img data-toggle=\'tooltip\' data-placement=\'top\' style=\'filter: grayscale(100%)\' title=\'' + key +'\' src=\''+ value.icon +'\' class=\'icon\'>" ' +
 						'value="'+key+'" ' + (checked ? 'checked' : '' ) + ' ' + (disabled ? 'disabled' : '' )+ '>' +
 					  '</label>'+
 					'</span>');

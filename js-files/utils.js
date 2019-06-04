@@ -17,8 +17,10 @@ updateSaveIcon = function (sessionModel) {
         });
 
         if (iconFull) {
+            openSaveSearchBtn.css("pointer-events", "none");
             openSaveSearchBtn.empty().append('<i class="material-icons">star</i>');
         } else {
+            openSaveSearchBtn.css("pointer-events", "unset");
             openSaveSearchBtn.empty().append('<i class="material-icons">star_border</i>');
         }
     });

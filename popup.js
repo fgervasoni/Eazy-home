@@ -154,6 +154,7 @@ var initApp = function () {
         });
 
         saveSearch.click(function () {
+            //TODO controllare nomi ricerche salvate
             var name = savedSearchName.val();
             if (!_.isEmpty(name)) {
                 saveFormModel(name).then(function () {

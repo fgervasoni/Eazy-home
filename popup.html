@@ -41,10 +41,7 @@
 						<span style="font-size: 20px; color: #4a4c4f" class="savedSearchSelect trn">savedsearch_menu</span>
 						<span class="caret"></span>
 					</button>
-					<ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="dropdownMenu">
-						<!-- <li role="separator" class="divider"></li>
-						<li><a href="#">Separated link</a></li> -->
-					</ul>
+					<ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="dropdownMenu"></ul>
 				</div>
                 <a id="about" class="menu-item trn">about</a>
                 <a id="feedback" class="menu-item trn">feedback</a>
@@ -69,7 +66,7 @@
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary trn" data-dismiss="modal">close</button>
-							<button id="saveSearch" type="button" class="btn btn-primary trn">save</button>
+							<button id="saveSearch" disabled type="button" class="btn btn-primary trn">save</button>
 						</div>
 					</div>
 				</div>
@@ -146,6 +143,7 @@
 		<script src="js-library/lodash.js"></script>
 		<script src="js-library/jquery.translate.js"></script>
 		<script src="js-library/q.js"></script>
+		<script src="js-library/notify.min.js"></script>
 		<script src="js-files/utils.js"></script>
 		<script src="js-files/country.js"></script>
 		<script src="js-files/language.js"></script>

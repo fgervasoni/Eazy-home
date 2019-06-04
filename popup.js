@@ -23,6 +23,8 @@ let firstSelectCountry = $("#firstSelectCountry");
 let modalCustom = $("#modalCustom");
 let sideNav = $("#sideNav");
 let savedSearchSelect = $(".savedSearchSelect");
+let dropdownMenuCustom = $(".dropdown-menu-custom");
+$.notify.defaults({ className: "success" });
 
 let browserLang = navigator.language ? navigator.language.split("-")[0] : (navigator.userLanguage ? navigator.userLanguage.split("-")[0] : "en");
 
@@ -94,7 +96,6 @@ var initApp = function () {
     chrome.storage.sync.get('country', function (data) {
         config = globalConfig[data.country];
 
-
         containerFlags.hide();
         containerSearch.show();
         openSaveSearchBtn.hide();
@@ -154,19 +155,37 @@ var initApp = function () {
         });
 
         saveSearch.click(function () {
-            //TODO controllare nomi ricerche salvate
             var name = savedSearchName.val();
-            if (!_.isEmpty(name)) {
-                saveFormModel(name).then(function () {
-                    //TODO: alert salvataggio eseguito con successo
-                    saveSearchModal.modal('hide');
-                    savedSearchName.val('');
-                });
+            saveFormModel(name).then(function () {
+                $.notify("Success", { position:"bottom right"});
+                saveSearchModal.modal('hide');
+            });
+        });
+
+        //Controllo nome ricerche già salvate o nulle
+        savedSearchName.on('change textInput input', function(){
+            var savedSearches = [];
+
+            //TODO capire perchè non sempre trova gli elementi
+            _.each(dropdownMenuCustom[0].childNodes, function(child){
+                savedSearches.push(child.id);
+            });
+
+            var name = savedSearchName.val();
+            if (_.isEmpty(name) || _.find(savedSearches, function(child) { return child === name; })) {
+                saveSearch.prop("disabled", true);
             }
+            else saveSearch.prop("disabled", false);
+        });
+
+        //cancella input all'uscita dalla modale
+        saveSearchModal.on('hidden.bs.modal', function () {
+            savedSearchName.value = '';
         });
 
         //TODO: si posso riunire?
         city.on('change textInput input', function (element) {
+            $('#city')[0].style.border = "1px solid #ced4da";
             if (element.currentTarget.value !== "") {
                 openSaveSearchBtn.show();
                 saveFormModel();

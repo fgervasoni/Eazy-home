@@ -17,9 +17,9 @@ updateSaveIcon = function (sessionModel) {
         });
 
         if (iconFull) {
-            $("#openSaveSearchBtn").empty().append('<i class="material-icons">star</i>');
+            openSaveSearchBtn.empty().append('<i class="material-icons">star</i>');
         } else {
-            $("#openSaveSearchBtn").empty().append('<i class="material-icons">star_border</i>');
+            openSaveSearchBtn.empty().append('<i class="material-icons">star_border</i>');
         }
     });
 };

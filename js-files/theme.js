@@ -18,12 +18,15 @@ var Theme = {
             sideNav.toggleClass('light');
             sideNav.toggleClass('dark');
 
-            //Trick cambio colore select ricerche salvate
-            if (themeBlack[0].style.display === 'none') savedSearchSelect.css({
-                "color": "#FAFAFA",
-                "transition": "500ms"
-            });
-            else savedSearchSelect.css({"color": "#4a4c4f", "transition": "500ms"});
+            //Trick cambio colore select ricerche salvate e icona preferiti
+            if (themeBlack[0].style.display === 'none') {
+                savedSearchSelect.css({"color": "#FAFAFA", "transition": "500ms"});
+                openSaveSearchBtn.css({"color": "#FAFAFA", "transition": "500ms"})
+            }
+            else {
+                savedSearchSelect.css({"color": "#4a4c4f", "transition": "500ms"});
+                openSaveSearchBtn.css({"color": "#4a4c4f", "transition": "500ms"});
+            }
 
             chrome.storage.sync.set({'theme': element.target.id});
         });
@@ -45,12 +48,15 @@ var Theme = {
                 sideNav.removeClass('light');
                 sideNav.addClass('dark');
 
-                //Trick cambio colore select ricerche salvate
-                if (themeBlack[0].style.display === 'none') savedSearchSelect.css({
-                    "color": "#FAFAFA",
-                    "transition": "500ms"
-                });
-                else savedSearchSelect.css({"color": "#4a4c4f", "transition": "500ms"});
+                //Trick cambio colore select ricerche salvate e icona preferiti
+                if (themeBlack[0].style.display === 'none') {
+                    savedSearchSelect.css({"color": "#FAFAFA", "transition": "500ms"});
+                    openSaveSearchBtn.css({"color": "#FAFAFA", "transition": "500ms"})
+                }
+                else {
+                    savedSearchSelect.css({"color": "#4a4c4f", "transition": "500ms"});
+                    openSaveSearchBtn.css({"color": "#4a4c4f", "transition": "500ms"});
+                }
             }
             Theme.addClickListener();
         });

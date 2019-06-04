@@ -71,7 +71,7 @@
 			"end_url": "&sortType=date_desc"
 		},
 		"kijiji": {
-			"name": "Casa.it",
+			"name": "Kijiji.it",
 			"icon": "images/kijiji.jpg",
 			"base_url": "https://www.kijiji.it",
 			"required_filters": "/case/{{contract}}/annunci-{{city}}/{{typology}}",

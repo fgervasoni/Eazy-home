@@ -97,23 +97,22 @@
 			"name": "Mio Affitto",
 			"icon": "images/mioaffitto.png",
 			"base_url": "https://www.mioaffitto.it",
-			"required_filters": "/search/?query_string={{city}}&",
+			"required_filters": "/search?query_string={{city}}&tipo={{typology}}&",
 			"contract" : {
 				"rent": "affitto"
 			},		
 			"typology" : {
-				"all": "TODO",
-				"house": "TODO",
-				"flat": "TODO"
+				"all": "",
+				"house": "13",
+				"flat": "3"
 			},
 			"optional_filters": {
 				"minPrice": "precio_min={{minPrice}}",
 				"maxPrice": "precio_max={{maxPrice}}",
-				"minArea": "TODO",
-				"maxArea": "TODO",
+				"minArea": "metros2={{minArea}}",
 				"separator": "&"
 			},
-			"end_url": "TOOD_DATE_DESC"
+			"end_url": "&order_field=1"
 		}
 	}
 }

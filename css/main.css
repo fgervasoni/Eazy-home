@@ -181,6 +181,7 @@ select {
 .dropdown-menu-custom {
     padding: 5px !important;
     margin-left: 12px !important;
+    top: -10px !important;
 }
 
 #dropdownMenu:focus {

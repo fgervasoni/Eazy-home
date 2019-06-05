@@ -41,6 +41,7 @@ var redrawSiteList = function (config) {
         _.forOwn(config, function (value, key) {
 
             //Check site to disable
+            //TODO sta roba non funziona
             if (!config[key].contract[contractSelected] || !config[key].typology[typologySelected]) {
                 disabled = true;
                 checked = false;
@@ -158,6 +159,7 @@ var initApp = function () {
             var name = savedSearchName.val();
             saveFormModel(name).then(function () {
                 $.notify("Success", { position:"bottom right"});
+                redrawDropdown($("#savedsearch-dropdown .dropdown-menu"));
                 saveSearchModal.modal('hide');
             });
         });
@@ -180,7 +182,11 @@ var initApp = function () {
 
         //cancella input all'uscita dalla modale
         saveSearchModal.on('hidden.bs.modal', function () {
-            savedSearchName.value = '';
+            savedSearchName[0].value = '';
+        });
+
+        openSaveSearchBtn.click(function(){
+            savedSearchName[0].value = '';
         });
 
         //TODO: si posso riunire?

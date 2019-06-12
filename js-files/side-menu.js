@@ -1,31 +1,31 @@
 var SideMenu = {
-    sideNav : $("#sideNav"),
-	openBtn : $("#menu"),
-	closeBtn :  $("#closeMenu"),
-	LanguageButton : $("#language-menu"),
-	CountryButton: $("#country-menu"),
-	SavedSearchesButton: $("#savedsearch-dropdown"),
-	RemoveSavedSearch: $("#removeSavedSearch"),
-	Open : function(){
-		SideMenu.sideNav[0].style.width = "250px";
-	},
-	Close : function(){
-		SideMenu.sideNav[0].style.width = "0";
-	}
+    sideNav: $("#sideNav"),
+    openBtn: $("#menu"),
+    closeBtn: $("#closeMenu"),
+    LanguageButton: $("#language-menu"),
+    CountryButton: $("#country-menu"),
+    SavedSearchesButton: $("#savedsearch-dropdown"),
+    RemoveSavedSearch: $("#removeSavedSearch"),
+    Open: function () {
+        SideMenu.sideNav[0].style.width = "250px";
+    },
+    Close: function () {
+        SideMenu.sideNav[0].style.width = "0";
+    }
 }
 
-SideMenu.openBtn.click(function(element) {
-	SideMenu.Open();
+SideMenu.openBtn.click(function (element) {
+    SideMenu.Open();
 });
 
-SideMenu.closeBtn.click(function(element) {
-	SideMenu.Close();
+SideMenu.closeBtn.click(function (element) {
+    SideMenu.Close();
 });
 
-SideMenu.CountryButton.click(function(element){
-	Country.showCountryPageSelection().then(function(countryCode){	
-		initApp();
-	});
+SideMenu.CountryButton.click(function (element) {
+    Country.showCountryPageSelection().then(function (countryCode) {
+        initApp();
+    });
 });
 
 SideMenu.SavedSearchesButton.click(function(){
@@ -55,11 +55,13 @@ SideMenu.SavedSearchesButton.click(function(){
                 redrawDropdown(dropdown);
 			});
         });
-	});
-	
-})
 
-// SideMenu.LanguageButton.click(function(element){
-	// Language.showLanguagePageSelection();
-// });
+        $("#savedsearch-dropdown li #removeSavedSearch").click(function (element) {
+            event.stopPropagation();
+            deleteFormModel((element.target.parentElement.id)).then(function () {
+                redrawDropdown(dropdown);
+            });
+        });
+    });
+});
 

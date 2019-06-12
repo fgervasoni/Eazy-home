@@ -2,6 +2,7 @@
 .toggle-off {
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
 }
+
 .toggle.off {
     border-color: rgba(0, 0, 0, .25);
 }
@@ -10,35 +11,37 @@
     background-color: white;
     border: thin rgba(0, 0, 0, .25) solid;
 }
+
 /* ------------- */
 
-html{
+html {
     font-size: 14px !important;
 }
 
 body {
     width: 400px;
-    font-family: 'Heebo', sans-serif !important;   
-	transition: 500ms;
+    font-family: 'Heebo', sans-serif !important;
+    transition: 500ms;
     padding: 10px;
 }
 
 /*Theme*/
-.light{
+.light {
     background-color: white !important;
     color: #4a4c4f !important;
 }
-.dark{
+
+.dark {
     background-color: #4a4c4f !important;
     color: #FAFAFA !important;
 }
 
 .theme {
-	float: right;
-	cursor:pointer;
+    float: right;
+    cursor: pointer;
 }
 
-#titleDiv{
+#titleDiv {
     text-align: center;
     font-size: 16px;
     padding: 10px;
@@ -47,33 +50,33 @@ body {
     border-bottom: 1px solid #dee2e6;
 }
 
-.icon{
+.icon {
     height: 20px;
 }
 
-.searchClass{
+.searchClass {
     cursor: pointer;
 }
 
-.center{
+.center {
     margin: auto !important;
 }
 
-label{
+label {
     margin-bottom: 0 !important;
     margin-top: 0.5rem;
 }
 
-#search{
+#search {
     margin: 10px;
     padding: 5px 100px;
 }
 
-select{
-	width: 175px !important;
+select {
+    width: 175px !important;
 }
 
-#city{
+#city {
     width: 250px;
     border-radius: 25px;
 }
@@ -107,15 +110,16 @@ select{
     cursor: pointer;
 }
 
-.flag{
+.flag {
     width: 60px;
     margin: 28px;
     transition: 500ms;
 }
-    .flag:hover{
-        opacity: 0.3;
-        cursor: pointer;
-    }
+
+.flag:hover {
+    opacity: 0.3;
+    cursor: pointer;
+}
 
 .menu-item {
     cursor: pointer;
@@ -143,26 +147,26 @@ select{
     left: 9px;
 }
 
-#site-list .btn-outline-primary{
+#site-list .btn-outline-primary {
     border-color: transparent;
 }
 
-#site-list .btn-outline-secondary{
+#site-list .btn-outline-secondary {
     border-color: transparent;
     /* width: 52px; */
 }
 
-#site-list  .btn-outline-primary:hover {
+#site-list .btn-outline-primary:hover {
     background-color: transparent;
     cursor: pointer;
 }
 
-#site-list  .btn-outline-secondary:hover {
+#site-list .btn-outline-secondary:hover {
     background-color: transparent;
     cursor: pointer;
 }
 
-#openSavesearchBtn{
+#openSaveSearchBtn {
     border: 0;
     position: absolute;
     right: 40px;
@@ -170,32 +174,38 @@ select{
     background: transparent;
 }
 
-#openSavesearchBtn:focus{
+#openSaveSearchBtn:focus {
     outline: unset;
 }
 
-.dropdown-menu-custom{
+.dropdown-menu-custom {
     padding: 5px !important;
-    margin-left: 12px!important;
+    margin-left: 12px !important;
+    top: -10px !important;
 }
 
-#dropdownMenu:focus{
+#dropdownMenu:focus {
     box-shadow: unset;
 }
 
-#removeSavedSearch{
-    float:right;
+#removeSavedSearch {
+    float: right;
     font-size: unset;
     margin-top: 3px;
     cursor: pointer;
 }
 
-.savedSearch{
+.savedSearch {
     padding-left: 5px;
 }
 
-.savedSearch:hover{
+.savedSearch:hover {
     cursor: pointer;
     background-color: #4c4c4c4f;
     border-radius: 4px;
+}
+
+.btn-primary {
+    background-color: #04549c !important;
+    border-color: #04549c !important;
 }

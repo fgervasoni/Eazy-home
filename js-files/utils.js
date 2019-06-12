@@ -74,104 +74,104 @@ var deleteFormModel = function(nameSearch){
 		if(nameSearch){
 			chrome.storage.sync.get('savedSearches', function(data) {
                 delete data.savedSearches[nameSearch];
-                chrome.storage.sync.set({ savedSearches: data.savedSearches });
-				deferred.resolve();
+                chrome.storage.sync.set({savedSearches: data.savedSearches});
+                deferred.resolve();
             })
-		} else {
-			deferred.resolve();
-		}
-	} catch(e){
-		deferred.reject();
-	}
-	return deferred.promise;
-}
+        } else {
+            deferred.resolve();
+        }
+    } catch (e) {
+        deferred.reject();
+    }
+    return deferred.promise;
+};
 
-var redrawDropdown = function(dropdown){
+var redrawDropdown = function (dropdown) {
     dropdown.empty();
-    chrome.storage.sync.get('savedSearches', function(data) {
+    chrome.storage.sync.get('savedSearches', function (data) {
         if (data && data.savedSearches) {
             _.forOwn(data.savedSearches, function (value, key) {
                 dropdown.append('<li class="savedSearch" id="' + key + '">' + key + '<i id="removeSavedSearch" class="material-icons">' + "clear" + '</i>' + '</li>');
             });
         }
     })
-}
+};
 
-var loadFormModel = function(nameSearch){
-	var deferred = Q.defer();
-	try {
-		if(nameSearch != 'formModel') {
-			//Carichiamo dalle preferenza dell'utente
-			chrome.storage.sync.get('savedSearches', function(data) {
-				if(data && data.savedSearches && data.savedSearches[nameSearch]){
-					let obj = data.savedSearches[nameSearch];
-					$('#city').val(obj.city),
-					$('#contract').val(obj.contract),
-					$('#typology').val(obj.typology),
-					$('#minPrice').val(obj.minPrice),
-					$('#maxPrice').val(obj.maxPrice),
-					$('#minArea').val(obj.minArea),
-					$('#maxArea').val(obj.maxArea)
-					deferred.resolve(obj);
-				} else {
-					deferred.resolve();
-				}
-			});
-		} else {
-			//Carichiamo il form di sessione
-			chrome.storage.sync.get('formModel', function(data) {
-				if(data && data['formModel']){
-					$('#city').val(data['formModel'].city),
-					$('#contract').val(data['formModel'].contract),
-					$('#typology').val(data['formModel'].typology),
-					$('#minPrice').val(data['formModel'].minPrice),
-					$('#maxPrice').val(data['formModel'].maxPrice),
-					$('#minArea').val(data['formModel'].minArea),
-					$('#maxArea').val(data['formModel'].maxArea)
-					deferred.resolve(data['formModel']);
-				} else {
-					deferred.resolve();
-				}
-			});
-		}
-	} catch(e){
-		deferred.resolve();
-	}
-	return deferred.promise;
-}
+var loadFormModel = function (nameSearch) {
+    var deferred = Q.defer();
+    try {
+        if (nameSearch !== 'formModel') {
+            //Carichiamo dalle preferenza dell'utente
+            chrome.storage.sync.get('savedSearches', function (data) {
+                if (data && data.savedSearches && data.savedSearches[nameSearch]) {
+                    let obj = data.savedSearches[nameSearch];
+                    $('#city').val(obj.city),
+                        $('#contract').val(obj.contract),
+                        $('#typology').val(obj.typology),
+                        $('#minPrice').val(obj.minPrice),
+                        $('#maxPrice').val(obj.maxPrice),
+                        $('#minArea').val(obj.minArea),
+                        $('#maxArea').val(obj.maxArea)
+                    deferred.resolve(obj);
+                } else {
+                    deferred.resolve();
+                }
+            });
+        } else {
+            //Carichiamo il form di sessione
+            chrome.storage.sync.get('formModel', function (data) {
+                if (data && data['formModel']) {
+                    $('#city').val(data['formModel'].city);
+                    $('#contract').val(data['formModel'].contract);
+                    $('#typology').val(data['formModel'].typology);
+                    $('#minPrice').val(data['formModel'].minPrice);
+                    $('#maxPrice').val(data['formModel'].maxPrice);
+                    $('#minArea').val(data['formModel'].minArea);
+                    $('#maxArea').val(data['formModel'].maxArea);
+                    deferred.resolve(data['formModel']);
+                } else {
+                    deferred.resolve();
+                }
+            });
+        }
+    } catch (e) {
+        deferred.resolve();
+    }
+    return deferred.promise;
+};
 
 var parserFunctions = {
-	idealistaParser : function(url){
-		url = url ? url : "";
-		url = url.replace("prezzo", "con-prezzo");
-		return url
-	},
-	kijijiParser : function(url){
-		url = url ? url : "";
-		var tokens = url.split("/");
-		tokens = _.map(tokens, (token) => {
-			if(_.includes(token, "metri-quadri2")) {
-				var subTokens = token.split(":");
-				subTokens[1] = Math.round(parseInt(subTokens[1], 10) / 20);
-				token = subTokens.join(':');
-			}
-			return token;
-		})
-		return tokens.join('/')
-	}
-}
+    idealistaParser: function (url) {
+        url = url ? url : "";
+        url = url.replace("prezzo", "con-prezzo");
+        return url
+    },
+    kijijiParser: function (url) {
+        url = url ? url : "";
+        var tokens = url.split("/");
+        tokens = _.map(tokens, (token) => {
+            if (_.includes(token, "metri-quadri2")) {
+                var subTokens = token.split(":");
+                subTokens[1] = Math.round(parseInt(subTokens[1], 10) / 20);
+                token = subTokens.join(':');
+            }
+            return token;
+        });
+        return tokens.join('/')
+    }
+};
 
 //ABOUT PAGE
-$("#about").click(function(){
+$("#about").click(function () {
     chrome.tabs.create({url: 'https://eazy-home.com/#about'})
 });
 
 //FEEDBACK PAGE
-$("#feedback").click(function(){
+$("#feedback").click(function () {
     chrome.tabs.create({url: 'https://eazy-home.com/#feedback'})
 });
 
 //OFFERS PAGE
-$("#offers").click(function(){
+$("#offers").click(function () {
     chrome.tabs.create({url: 'https://eazy-home.com/#offers'})
 });

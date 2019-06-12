@@ -32,9 +32,11 @@ var redrawSiteList = function (config) {
     let disabled = false;
     let checked = true;
 
-    loadFormModel().then(function (model) {
+    loadFormModel('formModel').then(function (model) {
         let contractSelected = model ? model.contract : "rent";
         let typologySelected = model ? model.typology : "flat";
+
+		updateSaveIcon(model);
 
         siteList.empty();
 
@@ -99,7 +101,6 @@ var initApp = function () {
 
         containerFlags.hide();
         containerSearch.show();
-        openSaveSearchBtn.hide();
 
         //Draw site list
         redrawSiteList(config);

@@ -17,9 +17,9 @@ updateSaveIcon = function(sessionModel){
 		})
 		
 		if(iconFull) {
-			$("#openSavesearchBtn").empty().append('<i class="material-icons">star</i>');
+			$("#openSavesearchBtn").empty().prop('disabled', true).append('<i class="material-icons">star</i>');
 		} else {
-			$("#openSavesearchBtn").empty().append('<i class="material-icons">star_border</i>');
+			$("#openSavesearchBtn").empty().prop('disabled', false).append('<i class="material-icons">star_border</i>');
 		}
 	});	
 }

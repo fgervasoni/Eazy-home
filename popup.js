@@ -148,7 +148,7 @@ var initApp = function(){
         });
 
 		//TODO: si posso riunire?
-		$("#city").on('change textInput input',function(element) {
+		$("#city").on('input',function(element) {
 			if (element.currentTarget.value !== ""){
 				$("#openSavesearchBtn").show();
 				saveFormModel();

@@ -41,8 +41,11 @@ SideMenu.SavedSearchesButton.click(function(){
 		}
 
 		$("#savedsearch-dropdown li.savedSearch").click(function(element){
-			loadFormModel(element.target.id).then(function(){
+			var searchName = element.target.id;
+			loadFormModel(searchName).then(function(){
 				SideMenu.Close();
+				$("#openSavesearchBtn").show();
+				updateSaveIcon(data.savedSearches[searchName]);
 			});
 		});
 

@@ -193,10 +193,10 @@ var initApp = function () {
 		city.on('input',function(element) {
             $('#city')[0].style.border = "1px solid #ced4da";
 			if (element.currentTarget.value !== ""){
-				$("#openSavesearchBtn").show();
+				$("#openSaveSearchBtn").show();
 				saveFormModel();
 			}else{
-				$("#openSavesearchBtn").hide();
+				$("#openSaveSearchBtn").hide();
 			}
 		});
         minPrice.change(function () {

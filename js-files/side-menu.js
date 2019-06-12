@@ -44,7 +44,7 @@ SideMenu.SavedSearchesButton.click(function(){
 			var searchName = element.target.id;
 			loadFormModel(searchName).then(function(){
 				SideMenu.Close();
-				$("#openSavesearchBtn").show();
+				$("#openSaveSearchBtn").show();
 				updateSaveIcon(data.savedSearches[searchName]);
 			});
 		});

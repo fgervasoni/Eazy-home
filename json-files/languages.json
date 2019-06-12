@@ -181,9 +181,9 @@
             "pt": ""
         },
 		"about": {
-            "it": "Di noi",
-            "uk": "About",
-			"en": "About",
+            "it": "Chi siamo",
+            "uk": "About us",
+			"en": "About us",
             "de": "",
             "fr": "",
             "es": "",
@@ -191,8 +191,8 @@
         },
         "offers": {
             "it": "Offrici un caffè",
-            "uk": "Offers",
-			"en": "Offers",
+            "uk": "Buy us a coffee",
+			"en": "Buy us a coffee",
             "de": "",
             "fr": "",
             "es": "",

@@ -33,19 +33,58 @@
 
 			<!--MENU-->
 			<div id="sideNav" class="sidenav light">
-				<a id="closeMenu" class="closebtn">&times;</a>
-				<a id="country-menu" class="menu-item trn">country</a>
-				<!-- <a id="savedsearch-menu" class="menu-item trn">savedsearch_menu</a> -->
-				<div id="savedsearch-dropdown" class="dropdown" style="margin-left: 20px">
-					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-						<span style="font-size: 20px; color: #4a4c4f" class="savedSearchSelect trn">savedsearch_menu</span>
-						<span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="dropdownMenu"></ul>
-				</div>
-                <a id="about" class="menu-item trn">about</a>
-                <a id="feedback" class="menu-item trn">feedback</a>
-                <a id="offers" class="menu-item trn">offers</a>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <a id="closeMenu" class="closebtn">&times;</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1">
+                        <i class="material-icons">language</i>
+                    </div>
+                    <div class="col-xs-11">
+                        <a id="country-menu" class="menu-item trn">country</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1">
+                        <i class="material-icons">youtube_searched_for</i>
+                    </div>
+                    <div class="col-xs-11">
+                        <!-- <a id="savedsearch-menu" class="menu-item trn">savedsearch_menu</a> -->
+                        <div id="savedsearch-dropdown" class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" style="padding: 0px 0px 5px 7px;" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <span style="font-size: 20px; color: #4a4c4f" class="savedSearchSelect trn">savedsearch_menu</span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-custom" style="left: -1px!important;" aria-labelledby="dropdownMenu"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1">
+                        <i class="material-icons">people</i>
+                    </div>
+                    <div class="col-xs-11">
+                        <a id="about" class="menu-item trn">about</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1">
+                        <i class="material-icons">feedback</i>
+                    </div>
+                    <div class="col-xs-11">
+                        <a id="feedback" class="menu-item trn">feedback</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1">
+                        <i class="material-icons">redeem</i>
+                    </div>
+                    <div class="col-xs-11">
+                        <a id="offers" class="menu-item trn">offers</a>
+                    </div>
+                </div>
             </div>
 
 			<!--SAVED SEARCH MODAL-->

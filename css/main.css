@@ -95,7 +95,7 @@ select {
 }
 
 .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding: 0px 8px 8px 8px;
     text-decoration: none;
     font-size: 20px;
     display: block;
@@ -208,4 +208,8 @@ select {
 .btn-primary {
     background-color: #04549c !important;
     border-color: #04549c !important;
+}
+
+.material-icons{
+    margin: 0 0 25px 35px;
 }

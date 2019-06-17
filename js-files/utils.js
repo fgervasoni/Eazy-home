@@ -143,7 +143,10 @@ var loadFormModel = function (nameSearch) {
 var parserFunctions = {
     idealistaParser: function (url) {
         url = url ? url : "";
+        //it-IT
         url = url.replace("prezzo", "con-prezzo");
+        //es-ES
+        url = url.replace("precio", "con-precio");
         return url
     },
     kijijiParser: function (url) {

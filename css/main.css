@@ -123,6 +123,7 @@ select {
 
 .menu-item {
     cursor: pointer;
+    white-space: nowrap;
 }
 
 #containerFlags {
@@ -212,4 +213,8 @@ select {
 
 .material-icons{
     margin: 0 0 25px 35px;
+}
+
+.menuRow{
+    display: -webkit-box !important;
 }

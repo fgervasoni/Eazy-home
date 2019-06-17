@@ -114,7 +114,33 @@
 			},
 			"end_url": "&order_field=1"
 		}
-	}
+	},
+    "es": {
+        "idealista": {
+            "name": "Idealista",
+            "icon": "images/idealista.png",
+            "base_url": "https://www.idealista.com",
+            "required_filters": "/{{contract}}-{{typology}}/{{city}}-{{city}}/",
+            "contract" : {
+                "rent": "alquiler",
+                "sell": "comprar"
+            },
+            "typology" : {
+                "house": "viviendas",
+                "flat": "viviendas",
+                "room": "habitacion"
+            },
+            "optional_filters": {
+                "minPrice": "precio-desde_{{minPrice}}",
+                "maxPrice": "precio-hasta_{{maxPrice}}",
+                "minArea": "metros-cuadrados-mas-de_{{minArea}}",
+                "maxArea": "metros-cuadrados-menos-de_{{maxArea}}",
+                "separator": ","
+            },
+            "end_url": "/?ordenado-por=fecha-publicacion-desc",
+            "parserFunctionName": "idealistaParser"
+        }
+    }
 }
 			
 			

@@ -7,6 +7,14 @@
 		"currency": "EUR (€)",
         "disable": false
 	},
+    "spain": {
+        "name" : "España",
+        "language" : "Español",
+        "image": "images/flags/spain.png",
+        "code": "es",
+        "currency": "EUR (€)",
+        "disable": false
+    },
 	"unitedKingdom": {
 		"name" : "United Kingdom",
 		"language" : "English",
@@ -28,14 +36,6 @@
 		"language" : "Français",
 		"image": "images/flags/france.png",
 		"code": "fr",
-		"currency": "EUR (€)",
-        "disable": true
-	},
-	"spain": {
-		"name" : "España",
-		"language" : "Español",
-		"image": "images/flags/spain.png",
-		"code": "es",
 		"currency": "EUR (€)",
         "disable": true
 	},

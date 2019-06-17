@@ -27,7 +27,7 @@ var Country = {
     setCountry: function (element) {
         var deferred = Q.defer();
         try {
-            chrome.storage.sync.set({country: element.target.id})
+            chrome.storage.sync.set({country: element.target.id});
             containerFlags.hide();
             titleDiv.show();
             containerSearch.show();

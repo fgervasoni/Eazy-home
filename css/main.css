@@ -111,7 +111,7 @@ select {
 }
 
 .flag {
-    width: 60px;
+    width: 15%;
     margin: 28px;
     transition: 500ms;
 }

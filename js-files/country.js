@@ -31,7 +31,7 @@ var Country = {
             containerFlags.hide();
             titleDiv.show();
             containerSearch.show();
-            sideNav.style.width = "0";
+            sideNav[0].style.width = "0";
             deferred.resolve(element.target.id);
         } catch (e) {
             deferred.reject("Fail to load languages config");

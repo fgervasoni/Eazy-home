@@ -218,3 +218,10 @@ select {
 .menuRow{
     display: -webkit-box !important;
 }
+
+#trash{
+    position: absolute;
+    right: 50px;
+    bottom: 0;
+    cursor: pointer;
+}

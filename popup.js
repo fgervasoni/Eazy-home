@@ -10,7 +10,6 @@ let minArea = $("#minArea");
 let maxArea = $("#maxArea");
 let minPrice = $("#minPrice");
 let maxPrice = $("#maxPrice");
-let typology = $("#typology");
 let city = $("#city");
 let openSaveSearchBtn = $("#openSaveSearchBtn");
 let saveSearchModal = $('#saveSearchModal');
@@ -22,6 +21,7 @@ let selectCountry = $("#selectCountry");
 let firstSelectCountry = $("#firstSelectCountry");
 let modalCustom = $("#modalCustom");
 let sideNav = $("#sideNav");
+let trash = $("#trash");
 let savedSearchSelect = $(".savedSearchSelect");
 let dropdownMenuCustom = $(".dropdown-menu-custom");
 $.notify.defaults({ className: "success" });
@@ -43,7 +43,6 @@ var redrawSiteList = function (config) {
         _.forOwn(config, function (value, key) {
 
             //Check site to disable
-            //TODO sta roba non funziona
             if (!config[key].contract[contractSelected] || !config[key].typology[typologySelected]) {
                 disabled = true;
                 checked = false;
@@ -188,6 +187,19 @@ var initApp = function () {
 
         openSaveSearchBtn.click(function(){
             savedSearchName[0].value = '';
+        });
+
+        let resetFilter = function(){
+            city[0].value = null;
+            minPrice[0].value = null;
+            maxPrice[0].value = null;
+            minArea[0].value = null;
+            maxArea[0].value = null;
+            saveFormModel();
+        };
+
+        trash.click(function(){
+            resetFilter();
         });
 
 		//TODO: si posso riunire?

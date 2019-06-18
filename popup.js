@@ -69,6 +69,9 @@ $(function () {
     $('[data-toggle="tooltip"]').tooltip();
     Theme.init();
 
+    //Nascondi stellina primo avvio
+    $("#openSaveSearchBtn").hide();
+
     //WORKAROUND for first country selection
     selectCountry.hide();
     firstSelectCountry.show();
@@ -200,6 +203,7 @@ var initApp = function () {
 
         trash.click(function(){
             resetFilter();
+            $("#openSaveSearchBtn").hide();
         });
 
 		//TODO: si posso riunire?
@@ -207,10 +211,10 @@ var initApp = function () {
             $('#city')[0].style.border = "1px solid #ced4da";
 			if (element.currentTarget.value !== ""){
 				$("#openSaveSearchBtn").show();
-				saveFormModel();
 			}else{
 				$("#openSaveSearchBtn").hide();
 			}
+            saveFormModel();
 		});
         minPrice.change(function () {
             saveFormModel();

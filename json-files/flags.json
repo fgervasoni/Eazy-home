@@ -13,7 +13,7 @@
         "image": "images/flags/spain.png",
         "code": "es",
         "currency": "EUR (€)",
-        "disable": false
+        "disable": true
     },
 	"unitedKingdom": {
 		"name" : "United Kingdom",

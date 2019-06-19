@@ -1,7 +1,7 @@
 {
 	"name": "Eazy Home",
-	"version": "1.0",
-	"description": "Extension for looking for home",
+	"version": "1.0.0",
+	"description": "Find your perfect home by searching on your favorite sites simultaneously",
 	"permissions": ["declarativeContent", "activeTab", "storage"],
 	"background": {
 	  "scripts": ["background.js"],

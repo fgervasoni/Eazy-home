@@ -36,7 +36,7 @@ SideMenu.SavedSearchesButton.click(function(){
 	chrome.storage.sync.get('savedSearches', function(data) { 
 		if(data && data.savedSearches){
 			_.forOwn(data.savedSearches, function(value, key){
-				dropdown.append('<li class="savedSearch" id="'+ key +'">'+ key +'<i id="removeSavedSearch" class="material-icons">'+"clear"+'</i>'+'</li>');
+				dropdown.append('<li>'+ '<span class="savedSearch" id="'+ key +'">'+ key +'</span>' +'<i id="removeSavedSearch" class="material-icons">'+"clear"+'</i>'+'</li>');
 			});
 		}
 
@@ -51,17 +51,9 @@ SideMenu.SavedSearchesButton.click(function(){
 		});
 
         $("#savedsearch-dropdown li #removeSavedSearch").click(function(element){
-			event.stopPropagation() ;
 			deleteFormModel((element.target.parentElement.id)).then(function(){
                 redrawDropdown(dropdown);
 			});
-        });
-
-        $("#savedsearch-dropdown li #removeSavedSearch").click(function (element) {
-            event.stopPropagation();
-            deleteFormModel((element.target.parentElement.id)).then(function () {
-                redrawDropdown(dropdown);
-            });
         });
     });
 });

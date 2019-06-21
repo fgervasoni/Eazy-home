@@ -95,7 +95,7 @@ select {
 }
 
 .sidenav a {
-    padding: 0px 8px 8px 8px;
+    padding: 0 8px 8px 8px;
     text-decoration: none;
     font-size: 20px;
     display: block;
@@ -224,4 +224,8 @@ select {
     right: 50px;
     bottom: 0;
     cursor: pointer;
+}
+
+#removeSavedSearch{
+    margin: 3px !important;
 }

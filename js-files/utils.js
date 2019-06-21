@@ -91,7 +91,7 @@ var redrawDropdown = function (dropdown) {
     chrome.storage.sync.get('savedSearches', function (data) {
         if (data && data.savedSearches) {
             _.forOwn(data.savedSearches, function (value, key) {
-                dropdown.append('<li class="savedSearch" id="' + key + '">' + key + '<i id="removeSavedSearch" class="material-icons">' + "clear" + '</i>' + '</li>');
+                dropdown.append('<li>'+ '<span class="savedSearch" id="'+ key +'">'+ key +'</span>' +'<i id="removeSavedSearch" class="material-icons">'+"clear"+'</i>'+'</li>');
             });
         }
     })

@@ -4,7 +4,7 @@ var SideMenu = {
     closeBtn: $("#closeMenu"),
     LanguageButton: $("#language-menu"),
     CountryButton: $("#country-menu"),
-    SavedSearchesButton: $("#savedsearch-dropdown"),
+    SavedSearchesButton: $("#savedsearch-dropdown button"),
     RemoveSavedSearch: $("#removeSavedSearch"),
     Open: function () {
         SideMenu.sideNav[0].style.width = "250px";
@@ -36,11 +36,11 @@ SideMenu.SavedSearchesButton.click(function(){
 	chrome.storage.sync.get('savedSearches', function(data) { 
 		if(data && data.savedSearches){
 			_.forOwn(data.savedSearches, function(value, key){
-				dropdown.append('<li>'+ '<span class="savedSearch" id="'+ key +'">'+ key +'</span>' +'<i id="removeSavedSearch" class="material-icons">'+"clear"+'</i>'+'</li>');
+				dropdown.append('<li id="'+ key +'" class="row" style="margin-right:0; margin-left:0">'+ '<span class="savedSearch col-8">'+ key +'</span>' +'<i id="removeSavedSearch" class="material-icons col col-1">'+"clear"+'</i>'+'</li>');
 			});
 		}
 
-		$("#savedsearch-dropdown li.savedSearch").click(function(element){
+		$("#savedsearch-dropdown li .savedSearch").click(function(element){
 			var searchName = element.target.id;
 			loadFormModel(searchName).then(function(model){
 				SideMenu.Close();

@@ -177,10 +177,18 @@ var initApp = function () {
             });
 
             var name = savedSearchName.val();
+            var regex = new RegExp("^[a-zA-Z0-9\\@_-]+$");
+
             if (_.isEmpty(name) || _.find(savedSearches, function(child) { return child === name; })) {
                 saveSearch.prop("disabled", true);
             }
-            else saveSearch.prop("disabled", false);
+            else {
+                if(regex.test(name)) {
+                    saveSearch.prop("disabled", false);
+                }else {
+                    saveSearch.prop("disabled", true);
+                }
+            }
         });
 
         //cancella input all'uscita dalla modale

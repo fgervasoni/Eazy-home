@@ -52,6 +52,7 @@ SideMenu.SavedSearchesButton.click(function(){
 
         $("#savedsearch-dropdown li #removeSavedSearch").click(function(element){
 			deleteFormModel((element.target.parentElement.id)).then(function(){
+                $.notify("Deleted", { position:"bottom right"});
                 redrawDropdown(dropdown);
 			});
         });
